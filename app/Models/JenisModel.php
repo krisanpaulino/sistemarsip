@@ -4,20 +4,18 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class UserModel extends Model
+class JenisModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'user';
-    protected $primaryKey       = 'id';
+    protected $table            = 'jenis';
+    protected $primaryKey       = 'jenis_id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'username',
-        'user_password',
-        'user_tipe',
-        'user_aktif',
+        'jenis_nama',
+        'delete',
     ];
 
     // Dates
@@ -29,10 +27,7 @@ class UserModel extends Model
 
     // Validation
     protected $validationRules      = [
-        'username' => 'required|is_unique[user.username]',
-        'user_password' => 'required',
-        'user_password' => 'required|matches[user_password]',
-        'user_tipe' => 'required',
+        'jenis_nama' => 'required',
     ];
     protected $validationMessages   = [];
     protected $skipValidation       = false;
@@ -40,8 +35,8 @@ class UserModel extends Model
 
     // Callbacks
     protected $allowCallbacks = true;
-    protected $beforeInsert   = ['hashPassword'];
-    protected $afterInsert    = ['hashPassword'];
+    protected $beforeInsert   = [];
+    protected $afterInsert    = [];
     protected $beforeUpdate   = [];
     protected $afterUpdate    = [];
     protected $beforeFind     = [];
@@ -49,25 +44,9 @@ class UserModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    protected function hashPassword(array $data)
+    function getJenis()
     {
-
-        if (isset($data['data']['user_password'])) {
-            $data['data']['user_password'] = password_hash($data['data']['user_password'], PASSWORD_DEFAULT);
-            // unset($data['data']['password']);
-        }
-        // dd($data);
-        return $data;
-    }
-    function findUser($username)
-    {
-        $this->where('username', $username);
-        $this->where('user_aktif', 1);
-        return $this->first();
-    }
-    function findActive()
-    {
-        $this->where('user_aktif', 1);
+        $this->where('delete', '0');
         return $this->find();
     }
 }

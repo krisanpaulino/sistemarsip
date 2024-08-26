@@ -13,16 +13,15 @@ class Auth extends BaseController
     }
     public function login()
     {
-        dd('');
         $username = $this->request->getPost('username');
-        $password = (string)$this->request->getPost('user_password');
+        $password = (string)$this->request->getPost('password');
         $model = new UserModel();
         $user = $model->findUser($username);
         if (empty($user))
-            return redirect()->back()->with('danger', 'User tidak ditemukan. Hubungi admin!');
+            return redirect()->to('auth')->with('danger', 'User tidak ditemukan. Hubungi admin!');
+        // dd($password);
         if (!password_verify($password, $user->user_password))
-            return redirect()->back()->with('danger', 'Password Salah. Hubungi admin!');
-        // dd($user);
+            return redirect()->to('auth')->with('danger', 'Password Salah. Hubungi admin!');
         session()->set('user', $user);
         switch ($user->user_tipe) {
             case 'admin':

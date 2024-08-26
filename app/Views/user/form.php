@@ -13,7 +13,7 @@
                         Input data user melalui form di bawah ini!
                     </small>
                 </div>
-                <form action="<?= base_url('user/register') ?>" method="post">
+                <form action="<?= base_url('admin/user/register') ?>" method="post">
                     <?= csrf_field() ?>
                     <div class="form-group mb-4">
                         <label for="user_tipe">Tipe User</label>
@@ -39,7 +39,7 @@
                     </div>
                     <div class="form-group mb-4">
                         <label for="user_password">Password</label>
-                        <input type="password" class="form-control <?= (isset(session('errors')['user_password'])) ? 'is-invalid' : '' ?>" id="user_password" name="user_password" value="<?= old('user_password') ?>">
+                        <input type="password" class="form-control <?= (isset(session('errors')['user_password'])) ? 'is-invalid' : '' ?>" id="user_password" name="password" value="<?= old('user_password') ?>">
                         <div class="invalid-feedback">
                             <?php if (isset(session('errors')['user_password'])) : ?>
                                 <?= session('errors')['user_password'] ?>

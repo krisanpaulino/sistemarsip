@@ -31,7 +31,14 @@
         </div><!-- logo -->
         <div class="simple-page-form" id="login-form">
             <h4 class="form-title m-b-xl text-center">Silahkan Sign In Menggunakan Akun Anda</h4>
-            <form action="<?= base_url('login') ?>" method="post">
+            <?php if (session()->has('danger')) : ?>
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <span><?= session('danger') ?></span>
+                </div>
+            <?php endif; ?>
+            <form action="<?= base_url('dologin') ?>" method="post">
+                <?= csrf_field() ?>
                 <div class="form-group">
                     <input id="sign-in-email" name="username" type="text" class="form-control" placeholder="username">
                 </div>

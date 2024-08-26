@@ -11,6 +11,7 @@ class User extends BaseController
 {
     public function signup()
     {
+        // dd(session('user'));
         $user = new UserModel();
         $unitModel = new UnitModel();
         $unit = $unitModel->getUnits();

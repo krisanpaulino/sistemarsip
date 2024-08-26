@@ -219,57 +219,25 @@
         <div class="menubar-scroll">
             <div class="menubar-scroll-inner">
                 <ul class="app-menu">
-                    <li class="has-submenu">
-                        <a href="javascript:void(0)" class="submenu-toggle">
+                    <li>
+                        <a href="<?= base_url('dashboard') ?>">
                             <i class="menu-icon zmdi zmdi-view-dashboard zmdi-hc-lg"></i>
-                            <span class="menu-text">Dashboards</span>
-                            <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
+                            <span class="menu-text">Dashboard</span>
                         </a>
-                        <ul class="submenu">
-                            <li><a href="index.html"><span class="menu-text">Dashboard 1</span></a></li>
-                            <li><a href="dashboard.2.html"><span class="menu-text">Dashboard 2</span></a></li>
-                            <li><a href="dashboard.3.html"><span class="menu-text">Dashboard 3</span></a></li>
-                        </ul>
                     </li>
-
-                    <li class="has-submenu">
-                        <a href="javascript:void(0)" class="submenu-toggle">
-                            <i class="menu-icon zmdi zmdi-layers zmdi-hc-lg"></i>
-                            <span class="menu-text">Layouts</span>
-                            <span class="label label-warning menu-label">2</span>
-                            <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
-                        </a>
-                        <ul class="submenu">
-                            <li><a href="../default/index.html"><span class="menu-text">Default</span></a></li>
-                            <li><a href="../topbar/index.html"><span class="menu-text">Topbar</span></a></li>
-                        </ul>
-                    </li>
-
                     <li>
                         <a href="<?= base_url('admin/master/unit') ?>">
                             <i class="menu-icon fa fa-object-group"></i>
                             <span class="menu-text">Master Unit</span>
                         </a>
                     </li>
+
                 </ul><!-- .app-menu -->
             </div><!-- .menubar-scroll-inner -->
         </div><!-- .menubar-scroll -->
     </aside>
     <!--========== END app aside -->
 
-    <!-- navbar search -->
-    <div id="navbar-search" class="navbar-search collapse">
-        <div class="navbar-search-inner">
-            <form action="#">
-                <span class="search-icon"><i class="fa fa-search"></i></span>
-                <input class="search-field" type="search" placeholder="search..." />
-            </form>
-            <button type="button" class="search-close" data-toggle="collapse" data-target="#navbar-search" aria-expanded="false">
-                <i class="fa fa-close"></i>
-            </button>
-        </div>
-        <div class="navbar-search-backdrop" data-toggle="collapse" data-target="#navbar-search" aria-expanded="false"></div>
-    </div><!-- .navbar-search -->
 
     <!-- APP MAIN ==========-->
     <main id="app-main" class="app-main">

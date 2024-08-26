@@ -15,7 +15,7 @@
                         Input data unit melalui form di bawah ini!
                     </small>
                 </div>
-                <form action="<?= base_url('master/saveunit') ?>" method="post">
+                <form action="<?= base_url('admin/master/saveunit') ?>" method="post">
                     <?= csrf_field() ?>
                     <div class="form-group mb-4">
                         <label for="unit_nama">Nama Unit</label>
@@ -55,7 +55,7 @@
                                     <tr>
                                         <td><?= $row->unit_nama ?></td>
                                         <td>
-                                            <a href="#" data-toggle="modal" data-target="#hapus" data-id="<?= $row->unit_id ?>" class="btn btn-danger btn-xs">Hapus</a>
+                                            <button href="#" data-toggle="modal" data-target="#hapus" data-id="<?= $row->unit_id ?>" class="btn btn-danger btn-xs">Hapus</button>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
@@ -77,7 +77,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('master/deleteunit') ?>" method="post">
+            <form action="<?= base_url('admin/master/deleteunit') ?>" method="post">
                 <div class="modal-body">
                     <?= csrf_field() ?>
                     <input type="hidden" name="id" id="kodeitem" class="d-flex d-none">
