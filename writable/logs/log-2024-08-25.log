@@ -1,0 +1,72 @@
+INFO - 2024-08-25 12:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-25 12:58:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-25 12:59:05 --> There is no data to insert.
+in SYSTEMPATH\BaseModel.php on line 1724.
+ 1 SYSTEMPATH\BaseModel.php(1724): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+ 2 SYSTEMPATH\BaseModel.php(748): CodeIgniter\BaseModel->transformDataToArray([], 'insert')
+ 3 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([], true)
+ 4 APPPATH\Controllers\User.php(28): CodeIgniter\Model->insert([])
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\User->register()
+ 6 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-25 12:59:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-25 12:59:43 --> CSRF token verified.
+INFO - 2024-08-25 12:59:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-25 12:59:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-25 13:00:03 --> CSRF token verified.
+CRITICAL - 2024-08-25 13:00:03 --> Undefined array key 0
+in APPPATH\Controllers\User.php on line 30.
+ 1 APPPATH\Controllers\User.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp_8\\htdocs\\sistemarsip\\app\\Controllers\\User.php', 30)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\User->register()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-25 13:00:46 --> CSRF token verified.
+INFO - 2024-08-25 13:00:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-25 13:00:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-25 13:03:36 --> CSRF token verified.
+INFO - 2024-08-25 13:04:48 --> CSRF token verified.
+INFO - 2024-08-25 13:04:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-25 13:04:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-25 13:06:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-25 13:06:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-25 13:07:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-25 13:07:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-25 13:08:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-25 13:08:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-25 13:09:14 --> CSRF token verified.
+INFO - 2024-08-25 13:09:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-25 13:09:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-25 13:20:40 --> Class "App\Filters\AdminFilter" not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/master/unit', 'before')
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-25 13:21:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-25 13:21:01 --> Attempt to read property "user_tipe" on null
+in APPPATH\Filters\AdminFilter.php on line 30.
+ 1 APPPATH\Filters\AdminFilter.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "user_tipe" on null', 'C:\\xampp_8\\htdocs\\sistemarsip\\app\\Filters\\AdminFilter.php', 30)
+ 2 SYSTEMPATH\Filters\Filters.php(182): App\Filters\AdminFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/master/unit', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-25 13:21:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-25 13:21:17 --> Attempt to read property "user_tipe" on null
+in APPPATH\Filters\AdminFilter.php on line 30.
+ 1 APPPATH\Filters\AdminFilter.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "user_tipe" on null', 'C:\\xampp_8\\htdocs\\sistemarsip\\app\\Filters\\AdminFilter.php', 30)
+ 2 SYSTEMPATH\Filters\Filters.php(182): App\Filters\AdminFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/master/unit', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-25 13:21:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-25 13:21:50 --> Attempt to read property "user_tipe" on null
+in APPPATH\Filters\AdminFilter.php on line 31.
+ 1 APPPATH\Filters\AdminFilter.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "user_tipe" on null', 'C:\\xampp_8\\htdocs\\sistemarsip\\app\\Filters\\AdminFilter.php', 31)
+ 2 SYSTEMPATH\Filters\Filters.php(182): App\Filters\AdminFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('admin/master/unit', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-25 13:22:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-25 13:25:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-25 13:25:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

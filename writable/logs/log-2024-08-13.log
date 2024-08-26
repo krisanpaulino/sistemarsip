@@ -1,0 +1,9 @@
+CRITICAL - 2024-08-13 12:31:29 --> Class "App\Controllers\BaseController" not found
+in APPPATH\Controllers\Auth.php on line 8.
+ 1 SYSTEMPATH\Router\AutoRouter.php(161): include_once()
+ 2 SYSTEMPATH\Router\Router.php(512): CodeIgniter\Router\AutoRouter->getRoute('auth', 'get')
+ 3 SYSTEMPATH\Router\Router.php(208): CodeIgniter\Router\Router->autoRoute('auth')
+ 4 SYSTEMPATH\CodeIgniter.php(796): CodeIgniter\Router\Router->handle('auth')
+ 5 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

@@ -1,0 +1,150 @@
+INFO - 2024-07-30 00:20:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 00:20:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 00:20:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 00:20:57 --> CSRF token verified.
+INFO - 2024-07-30 00:20:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 00:25:59 --> CSRF token verified.
+INFO - 2024-07-30 00:25:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-30 00:25:59 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Connection::getCompiledSelect()
+in APPPATH\Models\JadwalModel.php on line 88.
+ 1 APPPATH\Controllers\Perkuliahan.php(145): App\Models\JadwalModel->getTerjadwal('61', 'Senin', '07:30:00', '6')
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-30 00:26:33 --> CSRF token verified.
+INFO - 2024-07-30 00:26:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 00:27:02 --> CSRF token verified.
+INFO - 2024-07-30 00:27:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-30 00:27:02 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Result::getCompiledSelect()
+in APPPATH\Models\JadwalModel.php on line 88.
+ 1 APPPATH\Controllers\Perkuliahan.php(145): App\Models\JadwalModel->getTerjadwal('54', 'Senin', '07:30:00', '6')
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-30 00:27:24 --> CSRF token verified.
+INFO - 2024-07-30 00:27:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 00:53:09 --> CSRF token verified.
+INFO - 2024-07-30 00:53:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 00:53:45 --> CSRF token verified.
+INFO - 2024-07-30 00:53:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 00:54:07 --> CSRF token verified.
+INFO - 2024-07-30 00:54:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-30 00:54:10 --> ErrorException: Attempt to read property "jadwal_selesai" on null
+in APPPATH\Controllers\Perkuliahan.php on line 247.
+ 1 APPPATH\Controllers\Perkuliahan.php(247): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "jadwal_selesai" on null', 'C:\\xampp_8\\htdocs\\penjadwalan\\app\\Controllers\\Perkuliahan.php', 247)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-30 00:56:38 --> CSRF token verified.
+INFO - 2024-07-30 00:56:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 00:56:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 01:33:47 --> CSRF token verified.
+INFO - 2024-07-30 01:33:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 01:34:50 --> CSRF token verified.
+INFO - 2024-07-30 01:34:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 01:34:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 03:21:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 03:21:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 03:22:45 --> CSRF token verified.
+INFO - 2024-07-30 03:22:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 03:24:16 --> CSRF token verified.
+INFO - 2024-07-30 03:24:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 03:25:03 --> CSRF token verified.
+INFO - 2024-07-30 03:25:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 03:25:23 --> CSRF token verified.
+INFO - 2024-07-30 03:25:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 03:25:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 05:18:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 05:19:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 05:37:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 05:38:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 05:39:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:20:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:21:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:28:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:30:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:40:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:40:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:40:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:41:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:41:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:42:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:42:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:43:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:43:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:43:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:45:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-30 06:45:30 --> ErrorException: Attempt to read property "prodi_id" on null
+in APPPATH\Controllers\Helper.php on line 22.
+ 1 APPPATH\Controllers\Helper.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "prodi_id" on null', 'C:\\xampp_8\\htdocs\\penjadwalan\\app\\Controllers\\Helper.php', 22)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Helper->find_dosen('undefined')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Helper))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-30 06:45:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:53:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:53:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:53:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-30 06:53:51 --> ErrorException: Attempt to read property "prodi_id" on null
+in APPPATH\Controllers\Helper.php on line 22.
+ 1 APPPATH\Controllers\Helper.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "prodi_id" on null', 'C:\\xampp_8\\htdocs\\penjadwalan\\app\\Controllers\\Helper.php', 22)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Helper->find_dosen('undefined')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Helper))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-30 06:53:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:53:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:54:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:54:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-30 06:54:40 --> ErrorException: Attempt to read property "dosen_kode" on array
+in APPPATH\Views\layout.php on line 393.
+ 1 APPPATH\Views\layout.php(393): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "dosen_kode" on array', 'C:\\xampp_8\\htdocs\\penjadwalan\\app\\Views\\layout.php', 393)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp_8\\htdocs\\penjadwalan\\app\\Views\\layout.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout', [], true)
+ 5 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('perkuliahan/index', [], true)
+ 6 APPPATH\Controllers\Perkuliahan.php(28): view('perkuliahan/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-30 06:54:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-30 06:54:40 --> ErrorException: Undefined variable $perkuliahan
+in APPPATH\Views\layout.php on line 393.
+ 1 APPPATH\Views\layout.php(393): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $perkuliahan', 'C:\\xampp_8\\htdocs\\penjadwalan\\app\\Views\\layout.php', 393)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp_8\\htdocs\\penjadwalan\\app\\Views\\layout.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout', [], true)
+ 5 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('perkuliahan/jadwal', [], true)
+ 6 APPPATH\Controllers\Perkuliahan.php(91): view('perkuliahan/jadwal', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->jadwal()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-30 06:54:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-30 06:54:41 --> ErrorException: Undefined variable $perkuliahan
+in APPPATH\Views\layout.php on line 393.
+ 1 APPPATH\Views\layout.php(393): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $perkuliahan', 'C:\\xampp_8\\htdocs\\penjadwalan\\app\\Views\\layout.php', 393)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp_8\\htdocs\\penjadwalan\\app\\Views\\layout.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout', [], true)
+ 5 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('perkuliahan/jadwal', [], true)
+ 6 APPPATH\Controllers\Perkuliahan.php(91): view('perkuliahan/jadwal', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->jadwal()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-30 06:55:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:55:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:55:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:55:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:55:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:55:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 06:55:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 07:21:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-30 07:21:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

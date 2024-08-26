@@ -1,0 +1,928 @@
+INFO - 2024-07-29 00:37:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 00:37:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 00:37:34 --> CSRF token verified.
+INFO - 2024-07-29 00:37:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 00:37:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 00:37:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 00:37:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 00:37:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 00:37:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 01:01:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 01:02:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 01:03:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 01:04:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-29 03:39:26 --> mysqli_sql_exception: Table 'penjadwalan2.user' doesn't exist in C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('ALTER TABLE `us...', 0)
+#1 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('ALTER TABLE `us...')
+#2 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('ALTER TABLE `us...')
+#3 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\Forge.php(757): CodeIgniter\Database\BaseConnection->query('ALTER TABLE `us...')
+#4 C:\xampp_8\htdocs\penjadwalan\app\Database\Migrations\2024-03-10-151752_AddTUProditoUser.php(13): CodeIgniter\Database\Forge->addColumn('user', Array)
+#5 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(865): App\Database\Migrations\AddTUProditoUser->up()
+#6 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(181): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\CLI\Console.php(46): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp_8\htdocs\penjadwalan\spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+INFO - 2024-07-29 06:02:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 06:02:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 06:02:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 06:02:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-29 06:02:12 --> mysqli_sql_exception: Unknown column 'jadwal.sesi_id' in 'on clause' in C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `perkuli...', 0)
+#1 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `perkuli...')
+#2 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `perkuli...')
+#3 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `perkuli...', Array, false)
+#4 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\BaseModel.php(577): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp_8\htdocs\penjadwalan\app\Models\JadwalModel.php(138): CodeIgniter\BaseModel->find()
+#7 C:\xampp_8\htdocs\penjadwalan\app\Controllers\Perkuliahan.php(87): App\Models\JadwalModel->findJadwal()
+#8 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Perkuliahan->jadwal()
+#9 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+#10 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp_8\htdocs\penjadwalan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-07-29 06:02:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'jadwal.sesi_id' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `perkuliahan`.*, `mk`.*, `dosen`.`dosen_nama`, `jadwal`.*, `sesi`.*, `prodi`.`prodi_nama`, `ruangan`.*
+FROM `jadwal`
+JOIN `perkuliahan` ON `perkuliahan`.`perkuliahan_id` = `jadwal`.`perkuliahan_id`
+JOIN `mk` ON `mk`.`mk_kode` = `perkuliahan`.`mk_kode`
+JOIN `prodi` ON `mk`.`prodi_id` = `prodi`.`prodi_id`
+JOIN `ruangan` ON `ruangan`.`ruangan_id` = `jadwal`.`ruangan_id`
+JOIN `hari` ON `hari`.`hari` = `jadwal`.`hari`
+JOIN `dosen` ON `dosen`.`dosen_kode` = `jadwal`.`dosen_kode`
+JOIN `sesi` ON `sesi`.`sesi_id` = `jadwal`.`sesi_id`', [], false)
+ 2 SYSTEMPATH\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(577): CodeIgniter\Model->doFind(false, null)
+ 4 APPPATH\Models\JadwalModel.php(138): CodeIgniter\BaseModel->find()
+ 5 APPPATH\Controllers\Perkuliahan.php(87): App\Models\JadwalModel->findJadwal()
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->jadwal()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-29 06:02:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'jadwal.sesi_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `perkuliahan`.*, `mk`.*, `dosen`.`dosen_nama`, `jadwal`.*, `sesi`.*, `prodi`.`prodi_nama`, `ruangan`.*
+FROM `jadwal`
+JOIN `perkuliahan` ON `perkuliahan`.`perkuliahan_id` = `jadwal`.`perkuliahan_id`
+JOIN `mk` ON `mk`.`mk_kode` = `perkuliahan`.`mk_kode`
+JOIN `prodi` ON `mk`.`prodi_id` = `prodi`.`prodi_id`
+JOIN `ruangan` ON `ruangan`.`ruangan_id` = `jadwal`.`ruangan_id`
+JOIN `hari` ON `hari`.`hari` = `jadwal`.`hari`
+JOIN `dosen` ON `dosen`.`dosen_kode` = `jadwal`.`dosen_kode`
+JOIN `sesi` ON `sesi`.`sesi_id` = `jadwal`.`sesi_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `perkuliahan`.*, `mk`.*, `dosen`.`dosen_nama`, `jadwal`.*, `sesi`.*, `prodi`.`prodi_nama`, `ruangan`.*
+FROM `jadwal`
+JOIN `perkuliahan` ON `perkuliahan`.`perkuliahan_id` = `jadwal`.`perkuliahan_id`
+JOIN `mk` ON `mk`.`mk_kode` = `perkuliahan`.`mk_kode`
+JOIN `prodi` ON `mk`.`prodi_id` = `prodi`.`prodi_id`
+JOIN `ruangan` ON `ruangan`.`ruangan_id` = `jadwal`.`ruangan_id`
+JOIN `hari` ON `hari`.`hari` = `jadwal`.`hari`
+JOIN `dosen` ON `dosen`.`dosen_kode` = `jadwal`.`dosen_kode`
+JOIN `sesi` ON `sesi`.`sesi_id` = `jadwal`.`sesi_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `perkuliahan`.*, `mk`.*, `dosen`.`dosen_nama`, `jadwal`.*, `sesi`.*, `prodi`.`prodi_nama`, `ruangan`.*
+FROM `jadwal`
+JOIN `perkuliahan` ON `perkuliahan`.`perkuliahan_id` = `jadwal`.`perkuliahan_id`
+JOIN `mk` ON `mk`.`mk_kode` = `perkuliahan`.`mk_kode`
+JOIN `prodi` ON `mk`.`prodi_id` = `prodi`.`prodi_id`
+JOIN `ruangan` ON `ruangan`.`ruangan_id` = `jadwal`.`ruangan_id`
+JOIN `hari` ON `hari`.`hari` = `jadwal`.`hari`
+JOIN `dosen` ON `dosen`.`dosen_kode` = `jadwal`.`dosen_kode`
+JOIN `sesi` ON `sesi`.`sesi_id` = `jadwal`.`sesi_id`', [], false)
+ 4 SYSTEMPATH\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(577): CodeIgniter\Model->doFind(false, null)
+ 6 APPPATH\Models\JadwalModel.php(138): CodeIgniter\BaseModel->find()
+ 7 APPPATH\Controllers\Perkuliahan.php(87): App\Models\JadwalModel->findJadwal()
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->jadwal()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-29 06:02:12 --> [Caused by] mysqli_sql_exception: Unknown column 'jadwal.sesi_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `perkuliahan`.*, `mk`.*, `dosen`.`dosen_nama`, `jadwal`.*, `sesi`.*, `prodi`.`prodi_nama`, `ruangan`.*
+FROM `jadwal`
+JOIN `perkuliahan` ON `perkuliahan`.`perkuliahan_id` = `jadwal`.`perkuliahan_id`
+JOIN `mk` ON `mk`.`mk_kode` = `perkuliahan`.`mk_kode`
+JOIN `prodi` ON `mk`.`prodi_id` = `prodi`.`prodi_id`
+JOIN `ruangan` ON `ruangan`.`ruangan_id` = `jadwal`.`ruangan_id`
+JOIN `hari` ON `hari`.`hari` = `jadwal`.`hari`
+JOIN `dosen` ON `dosen`.`dosen_kode` = `jadwal`.`dosen_kode`
+JOIN `sesi` ON `sesi`.`sesi_id` = `jadwal`.`sesi_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `perkuliahan`.*, `mk`.*, `dosen`.`dosen_nama`, `jadwal`.*, `sesi`.*, `prodi`.`prodi_nama`, `ruangan`.*
+FROM `jadwal`
+JOIN `perkuliahan` ON `perkuliahan`.`perkuliahan_id` = `jadwal`.`perkuliahan_id`
+JOIN `mk` ON `mk`.`mk_kode` = `perkuliahan`.`mk_kode`
+JOIN `prodi` ON `mk`.`prodi_id` = `prodi`.`prodi_id`
+JOIN `ruangan` ON `ruangan`.`ruangan_id` = `jadwal`.`ruangan_id`
+JOIN `hari` ON `hari`.`hari` = `jadwal`.`hari`
+JOIN `dosen` ON `dosen`.`dosen_kode` = `jadwal`.`dosen_kode`
+JOIN `sesi` ON `sesi`.`sesi_id` = `jadwal`.`sesi_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `perkuliahan`.*, `mk`.*, `dosen`.`dosen_nama`, `jadwal`.*, `sesi`.*, `prodi`.`prodi_nama`, `ruangan`.*
+FROM `jadwal`
+JOIN `perkuliahan` ON `perkuliahan`.`perkuliahan_id` = `jadwal`.`perkuliahan_id`
+JOIN `mk` ON `mk`.`mk_kode` = `perkuliahan`.`mk_kode`
+JOIN `prodi` ON `mk`.`prodi_id` = `prodi`.`prodi_id`
+JOIN `ruangan` ON `ruangan`.`ruangan_id` = `jadwal`.`ruangan_id`
+JOIN `hari` ON `hari`.`hari` = `jadwal`.`hari`
+JOIN `dosen` ON `dosen`.`dosen_kode` = `jadwal`.`dosen_kode`
+JOIN `sesi` ON `sesi`.`sesi_id` = `jadwal`.`sesi_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `perkuliahan`.*, `mk`.*, `dosen`.`dosen_nama`, `jadwal`.*, `sesi`.*, `prodi`.`prodi_nama`, `ruangan`.*
+FROM `jadwal`
+JOIN `perkuliahan` ON `perkuliahan`.`perkuliahan_id` = `jadwal`.`perkuliahan_id`
+JOIN `mk` ON `mk`.`mk_kode` = `perkuliahan`.`mk_kode`
+JOIN `prodi` ON `mk`.`prodi_id` = `prodi`.`prodi_id`
+JOIN `ruangan` ON `ruangan`.`ruangan_id` = `jadwal`.`ruangan_id`
+JOIN `hari` ON `hari`.`hari` = `jadwal`.`hari`
+JOIN `dosen` ON `dosen`.`dosen_kode` = `jadwal`.`dosen_kode`
+JOIN `sesi` ON `sesi`.`sesi_id` = `jadwal`.`sesi_id`', [], false)
+ 5 SYSTEMPATH\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(577): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Models\JadwalModel.php(138): CodeIgniter\BaseModel->find()
+ 8 APPPATH\Controllers\Perkuliahan.php(87): App\Models\JadwalModel->findJadwal()
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->jadwal()
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-29 06:02:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 06:03:02 --> CSRF token verified.
+INFO - 2024-07-29 06:03:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 06:03:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 06:03:08 --> CSRF token verified.
+INFO - 2024-07-29 06:03:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-29 06:03:08 --> TypeError: strtotime(): Argument #2 ($baseTimestamp) must be of type ?int, string given
+in APPPATH\Models\JadwalModel.php on line 77.
+ 1 APPPATH\Models\JadwalModel.php(77): strtotime('+300 minutes', '07:30:00')
+ 2 APPPATH\Controllers\Perkuliahan.php(201): App\Models\JadwalModel->getTerjadwal('4', 'Senin', '07:30:00', '6')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-29 07:16:43 --> CSRF token verified.
+INFO - 2024-07-29 07:16:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-29 07:16:44 --> TypeError: strtotime(): Argument #2 ($baseTimestamp) must be of type ?int, string given
+in APPPATH\Models\JadwalModel.php on line 77.
+ 1 APPPATH\Models\JadwalModel.php(77): strtotime('+300 minutes', '07:30:00')
+ 2 APPPATH\Controllers\Perkuliahan.php(201): App\Models\JadwalModel->getTerjadwal('4', 'Senin', '07:30:00', '6')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-29 07:17:25 --> CSRF token verified.
+INFO - 2024-07-29 07:17:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-29 07:17:25 --> ErrorException: Undefined variable $s
+in APPPATH\Controllers\Perkuliahan.php on line 218.
+ 1 APPPATH\Controllers\Perkuliahan.php(218): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $s', 'C:\\xampp_8\\htdocs\\penjadwalan\\app\\Controllers\\Perkuliahan.php', 218)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-29 07:18:36 --> CSRF token verified.
+INFO - 2024-07-29 07:18:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-29 07:18:36 --> ErrorException: Undefined property: stdClass::$m_sks
+in APPPATH\Controllers\Perkuliahan.php on line 219.
+ 1 APPPATH\Controllers\Perkuliahan.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$m_sks', 'C:\\xampp_8\\htdocs\\penjadwalan\\app\\Controllers\\Perkuliahan.php', 219)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-29 07:30:44 --> CSRF token verified.
+INFO - 2024-07-29 07:30:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-29 07:30:44 --> ErrorException: Undefined property: stdClass::$m_sks
+in APPPATH\Controllers\Perkuliahan.php on line 219.
+ 1 APPPATH\Controllers\Perkuliahan.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$m_sks', 'C:\\xampp_8\\htdocs\\penjadwalan\\app\\Controllers\\Perkuliahan.php', 219)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-29 07:32:18 --> CSRF token verified.
+INFO - 2024-07-29 07:32:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 07:32:46 --> CSRF token verified.
+INFO - 2024-07-29 07:32:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-29 07:32:46 --> ErrorException: Undefined property: stdClass::$m_sks
+in APPPATH\Controllers\Perkuliahan.php on line 161.
+ 1 APPPATH\Controllers\Perkuliahan.php(161): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$m_sks', 'C:\\xampp_8\\htdocs\\penjadwalan\\app\\Controllers\\Perkuliahan.php', 161)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-29 07:33:14 --> CSRF token verified.
+INFO - 2024-07-29 07:33:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 07:33:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-29 07:33:16 --> ErrorException: Undefined property: stdClass::$sesi_mulai
+in APPPATH\Views\perkuliahan\jadwal.php on line 61.
+ 1 APPPATH\Views\perkuliahan\jadwal.php(61): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$sesi_mulai', 'C:\\xampp_8\\htdocs\\penjadwalan\\app\\Views\\perkuliahan\\jadwal.php', 61)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp_8\\htdocs\\penjadwalan\\app\\Views\\perkuliahan\\jadwal.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('perkuliahan/jadwal', [], true)
+ 5 APPPATH\Controllers\Perkuliahan.php(91): view('perkuliahan/jadwal', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->jadwal()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-29 07:33:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 07:55:35 --> CSRF token verified.
+INFO - 2024-07-29 07:55:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 07:55:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 07:56:18 --> CSRF token verified.
+INFO - 2024-07-29 07:56:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 07:56:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 07:57:12 --> CSRF token verified.
+INFO - 2024-07-29 07:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-29 07:57:12 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND ...' at line 6 in C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\BaseModel.php(577): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp_8\htdocs\penjadwalan\app\Models\JadwalModel.php(88): CodeIgniter\BaseModel->find()
+#7 C:\xampp_8\htdocs\penjadwalan\app\Controllers\Perkuliahan.php(143): App\Models\JadwalModel->getTerjadwal('61', 'Senin', '07:30:00', '6')
+#8 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+#9 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+#10 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp_8\htdocs\penjadwalan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-07-29 07:57:12 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND ...' at line 6
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = :ruangan_id:
+AND `hari` = :hari.1:
+AND   (
+jadwal_mulai <= :jadwal_mulai:
+AND jadwal_selesai >= :jadwal_selesai:
+ )
+OR   (
+jadwal_mulai <= :jadwal_mulai.1:
+AND jadwal_selesai >= :jadwal_selesai.1:
+ )', [...], false)
+ 2 SYSTEMPATH\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(577): CodeIgniter\Model->doFind(false, null)
+ 4 APPPATH\Models\JadwalModel.php(88): CodeIgniter\BaseModel->find()
+ 5 APPPATH\Controllers\Perkuliahan.php(143): App\Models\JadwalModel->getTerjadwal('61', 'Senin', '07:30:00', '6')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-29 07:57:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND ...' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = \'61\'
+AND `hari` = \'Senin\'
+AND   (
+jadwal_mulai <= 07:30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND jadwal_selesai >= 12:30:00
+ )')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = \'61\'
+AND `hari` = \'Senin\'
+AND   (
+jadwal_mulai <= 07:30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND jadwal_selesai >= 12:30:00
+ )')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = :ruangan_id:
+AND `hari` = :hari.1:
+AND   (
+jadwal_mulai <= :jadwal_mulai:
+AND jadwal_selesai >= :jadwal_selesai:
+ )
+OR   (
+jadwal_mulai <= :jadwal_mulai.1:
+AND jadwal_selesai >= :jadwal_selesai.1:
+ )', [...], false)
+ 4 SYSTEMPATH\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(577): CodeIgniter\Model->doFind(false, null)
+ 6 APPPATH\Models\JadwalModel.php(88): CodeIgniter\BaseModel->find()
+ 7 APPPATH\Controllers\Perkuliahan.php(143): App\Models\JadwalModel->getTerjadwal('61', 'Senin', '07:30:00', '6')
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-29 07:57:12 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND ...' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = \'61\'
+AND `hari` = \'Senin\'
+AND   (
+jadwal_mulai <= 07:30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND jadwal_selesai >= 12:30:00
+ )', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = \'61\'
+AND `hari` = \'Senin\'
+AND   (
+jadwal_mulai <= 07:30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND jadwal_selesai >= 12:30:00
+ )')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = \'61\'
+AND `hari` = \'Senin\'
+AND   (
+jadwal_mulai <= 07:30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND jadwal_selesai >= 12:30:00
+ )')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = :ruangan_id:
+AND `hari` = :hari.1:
+AND   (
+jadwal_mulai <= :jadwal_mulai:
+AND jadwal_selesai >= :jadwal_selesai:
+ )
+OR   (
+jadwal_mulai <= :jadwal_mulai.1:
+AND jadwal_selesai >= :jadwal_selesai.1:
+ )', [...], false)
+ 5 SYSTEMPATH\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(577): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Models\JadwalModel.php(88): CodeIgniter\BaseModel->find()
+ 8 APPPATH\Controllers\Perkuliahan.php(143): App\Models\JadwalModel->getTerjadwal('61', 'Senin', '07:30:00', '6')
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-29 07:58:12 --> CSRF token verified.
+INFO - 2024-07-29 07:58:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-29 07:58:12 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND ...' at line 6 in C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\BaseModel.php(577): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp_8\htdocs\penjadwalan\app\Models\JadwalModel.php(88): CodeIgniter\BaseModel->find()
+#7 C:\xampp_8\htdocs\penjadwalan\app\Controllers\Perkuliahan.php(143): App\Models\JadwalModel->getTerjadwal('54', 'Senin', '07:30:00', '6')
+#8 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+#9 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+#10 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp_8\htdocs\penjadwalan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-07-29 07:58:12 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND ...' at line 6
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = :ruangan_id:
+AND `hari` = :hari.1:
+AND   (
+jadwal_mulai <= :jadwal_mulai:
+AND jadwal_selesai >= :jadwal_selesai:
+ )
+OR   (
+jadwal_mulai <= :jadwal_mulai.1:
+AND jadwal_selesai >= :jadwal_selesai.1:
+ )', [...], false)
+ 2 SYSTEMPATH\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(577): CodeIgniter\Model->doFind(false, null)
+ 4 APPPATH\Models\JadwalModel.php(88): CodeIgniter\BaseModel->find()
+ 5 APPPATH\Controllers\Perkuliahan.php(143): App\Models\JadwalModel->getTerjadwal('54', 'Senin', '07:30:00', '6')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-29 07:58:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND ...' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = \'54\'
+AND `hari` = \'Senin\'
+AND   (
+jadwal_mulai <= 07:30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND jadwal_selesai >= 12:30:00
+ )')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = \'54\'
+AND `hari` = \'Senin\'
+AND   (
+jadwal_mulai <= 07:30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND jadwal_selesai >= 12:30:00
+ )')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = :ruangan_id:
+AND `hari` = :hari.1:
+AND   (
+jadwal_mulai <= :jadwal_mulai:
+AND jadwal_selesai >= :jadwal_selesai:
+ )
+OR   (
+jadwal_mulai <= :jadwal_mulai.1:
+AND jadwal_selesai >= :jadwal_selesai.1:
+ )', [...], false)
+ 4 SYSTEMPATH\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(577): CodeIgniter\Model->doFind(false, null)
+ 6 APPPATH\Models\JadwalModel.php(88): CodeIgniter\BaseModel->find()
+ 7 APPPATH\Controllers\Perkuliahan.php(143): App\Models\JadwalModel->getTerjadwal('54', 'Senin', '07:30:00', '6')
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-29 07:58:12 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND ...' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = \'54\'
+AND `hari` = \'Senin\'
+AND   (
+jadwal_mulai <= 07:30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND jadwal_selesai >= 12:30:00
+ )', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = \'54\'
+AND `hari` = \'Senin\'
+AND   (
+jadwal_mulai <= 07:30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND jadwal_selesai >= 12:30:00
+ )')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = \'54\'
+AND `hari` = \'Senin\'
+AND   (
+jadwal_mulai <= 07:30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND jadwal_selesai >= 12:30:00
+ )')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = :ruangan_id:
+AND `hari` = :hari.1:
+AND   (
+jadwal_mulai <= :jadwal_mulai:
+AND jadwal_selesai >= :jadwal_selesai:
+ )
+OR   (
+jadwal_mulai <= :jadwal_mulai.1:
+AND jadwal_selesai >= :jadwal_selesai.1:
+ )', [...], false)
+ 5 SYSTEMPATH\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(577): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Models\JadwalModel.php(88): CodeIgniter\BaseModel->find()
+ 8 APPPATH\Controllers\Perkuliahan.php(143): App\Models\JadwalModel->getTerjadwal('54', 'Senin', '07:30:00', '6')
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-29 07:59:10 --> CSRF token verified.
+INFO - 2024-07-29 07:59:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-29 07:59:10 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':30:00
+AND jadwal_selesai >= 12:30:00
+ )' at line 10 in C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\BaseModel.php(577): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp_8\htdocs\penjadwalan\app\Models\JadwalModel.php(88): CodeIgniter\BaseModel->find()
+#7 C:\xampp_8\htdocs\penjadwalan\app\Controllers\Perkuliahan.php(143): App\Models\JadwalModel->getTerjadwal('61', 'Senin', '07:30:00', '6')
+#8 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+#9 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+#10 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp_8\htdocs\penjadwalan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-07-29 07:59:10 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':30:00
+AND jadwal_selesai >= 12:30:00
+ )' at line 10
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = :ruangan_id:
+AND `hari` = :hari.1:
+AND   (
+`jadwal_mulai` <= :jadwal_mulai:
+AND `jadwal_selesai` >= :jadwal_selesai:
+ )
+OR   (
+jadwal_mulai <= :jadwal_mulai.1:
+AND jadwal_selesai >= :jadwal_selesai.1:
+ )', [...], false)
+ 2 SYSTEMPATH\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(577): CodeIgniter\Model->doFind(false, null)
+ 4 APPPATH\Models\JadwalModel.php(88): CodeIgniter\BaseModel->find()
+ 5 APPPATH\Controllers\Perkuliahan.php(143): App\Models\JadwalModel->getTerjadwal('61', 'Senin', '07:30:00', '6')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-29 07:59:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':30:00
+AND jadwal_selesai >= 12:30:00
+ )' at line 10
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = \'61\'
+AND `hari` = \'Senin\'
+AND   (
+`jadwal_mulai` <= \'07:30:00\'
+AND `jadwal_selesai` >= \'07:30:00\'
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND jadwal_selesai >= 12:30:00
+ )')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = \'61\'
+AND `hari` = \'Senin\'
+AND   (
+`jadwal_mulai` <= \'07:30:00\'
+AND `jadwal_selesai` >= \'07:30:00\'
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND jadwal_selesai >= 12:30:00
+ )')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = :ruangan_id:
+AND `hari` = :hari.1:
+AND   (
+`jadwal_mulai` <= :jadwal_mulai:
+AND `jadwal_selesai` >= :jadwal_selesai:
+ )
+OR   (
+jadwal_mulai <= :jadwal_mulai.1:
+AND jadwal_selesai >= :jadwal_selesai.1:
+ )', [...], false)
+ 4 SYSTEMPATH\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(577): CodeIgniter\Model->doFind(false, null)
+ 6 APPPATH\Models\JadwalModel.php(88): CodeIgniter\BaseModel->find()
+ 7 APPPATH\Controllers\Perkuliahan.php(143): App\Models\JadwalModel->getTerjadwal('61', 'Senin', '07:30:00', '6')
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-29 07:59:10 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':30:00
+AND jadwal_selesai >= 12:30:00
+ )' at line 10
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = \'61\'
+AND `hari` = \'Senin\'
+AND   (
+`jadwal_mulai` <= \'07:30:00\'
+AND `jadwal_selesai` >= \'07:30:00\'
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND jadwal_selesai >= 12:30:00
+ )', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = \'61\'
+AND `hari` = \'Senin\'
+AND   (
+`jadwal_mulai` <= \'07:30:00\'
+AND `jadwal_selesai` >= \'07:30:00\'
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND jadwal_selesai >= 12:30:00
+ )')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = \'61\'
+AND `hari` = \'Senin\'
+AND   (
+`jadwal_mulai` <= \'07:30:00\'
+AND `jadwal_selesai` >= \'07:30:00\'
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND jadwal_selesai >= 12:30:00
+ )')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = :ruangan_id:
+AND `hari` = :hari.1:
+AND   (
+`jadwal_mulai` <= :jadwal_mulai:
+AND `jadwal_selesai` >= :jadwal_selesai:
+ )
+OR   (
+jadwal_mulai <= :jadwal_mulai.1:
+AND jadwal_selesai >= :jadwal_selesai.1:
+ )', [...], false)
+ 5 SYSTEMPATH\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(577): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Models\JadwalModel.php(88): CodeIgniter\BaseModel->find()
+ 8 APPPATH\Controllers\Perkuliahan.php(143): App\Models\JadwalModel->getTerjadwal('61', 'Senin', '07:30:00', '6')
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-29 07:59:35 --> CSRF token verified.
+INFO - 2024-07-29 07:59:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 07:59:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 07:59:58 --> CSRF token verified.
+INFO - 2024-07-29 07:59:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-29 07:59:58 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND ...' at line 6 in C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\BaseModel.php(577): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp_8\htdocs\penjadwalan\app\Models\JadwalModel.php(88): CodeIgniter\BaseModel->find()
+#7 C:\xampp_8\htdocs\penjadwalan\app\Controllers\Perkuliahan.php(143): App\Models\JadwalModel->getTerjadwal('61', 'Senin', '07:30:00', '6')
+#8 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+#9 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+#10 C:\xampp_8\htdocs\penjadwalan\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp_8\htdocs\penjadwalan\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-07-29 07:59:58 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND ...' at line 6
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = :ruangan_id:
+AND `hari` = :hari.1:
+AND   (
+jadwal_mulai <= :jadwal_mulai:
+AND jadwal_selesai >= :jadwal_selesai:
+ )
+OR   (
+jadwal_mulai <= :jadwal_mulai.1:
+AND jadwal_selesai >= :jadwal_selesai.1:
+ )', [...], false)
+ 2 SYSTEMPATH\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(577): CodeIgniter\Model->doFind(false, null)
+ 4 APPPATH\Models\JadwalModel.php(88): CodeIgniter\BaseModel->find()
+ 5 APPPATH\Controllers\Perkuliahan.php(143): App\Models\JadwalModel->getTerjadwal('61', 'Senin', '07:30:00', '6')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-29 07:59:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND ...' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = \'61\'
+AND `hari` = \'Senin\'
+AND   (
+jadwal_mulai <= 07:30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND jadwal_selesai >= 12:30:00
+ )')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = \'61\'
+AND `hari` = \'Senin\'
+AND   (
+jadwal_mulai <= 07:30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND jadwal_selesai >= 12:30:00
+ )')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = :ruangan_id:
+AND `hari` = :hari.1:
+AND   (
+jadwal_mulai <= :jadwal_mulai:
+AND jadwal_selesai >= :jadwal_selesai:
+ )
+OR   (
+jadwal_mulai <= :jadwal_mulai.1:
+AND jadwal_selesai >= :jadwal_selesai.1:
+ )', [...], false)
+ 4 SYSTEMPATH\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(577): CodeIgniter\Model->doFind(false, null)
+ 6 APPPATH\Models\JadwalModel.php(88): CodeIgniter\BaseModel->find()
+ 7 APPPATH\Controllers\Perkuliahan.php(143): App\Models\JadwalModel->getTerjadwal('61', 'Senin', '07:30:00', '6')
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-29 07:59:58 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND ...' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = \'61\'
+AND `hari` = \'Senin\'
+AND   (
+jadwal_mulai <= 07:30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND jadwal_selesai >= 12:30:00
+ )', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = \'61\'
+AND `hari` = \'Senin\'
+AND   (
+jadwal_mulai <= 07:30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND jadwal_selesai >= 12:30:00
+ )')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = \'61\'
+AND `hari` = \'Senin\'
+AND   (
+jadwal_mulai <= 07:30:00
+AND jadwal_selesai >= 07:30:00
+ )
+OR   (
+jadwal_mulai <= 12:30:00
+AND jadwal_selesai >= 12:30:00
+ )')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `jadwal`
+WHERE `ruangan_id` = :ruangan_id:
+AND `hari` = :hari.1:
+AND   (
+jadwal_mulai <= :jadwal_mulai:
+AND jadwal_selesai >= :jadwal_selesai:
+ )
+OR   (
+jadwal_mulai <= :jadwal_mulai.1:
+AND jadwal_selesai >= :jadwal_selesai.1:
+ )', [...], false)
+ 5 SYSTEMPATH\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(577): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Models\JadwalModel.php(88): CodeIgniter\BaseModel->find()
+ 8 APPPATH\Controllers\Perkuliahan.php(143): App\Models\JadwalModel->getTerjadwal('61', 'Senin', '07:30:00', '6')
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-29 08:01:43 --> CSRF token verified.
+INFO - 2024-07-29 08:01:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 08:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 13:42:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 13:42:55 --> CSRF token verified.
+INFO - 2024-07-29 13:42:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-29 13:42:55 --> ErrorException: Attempt to read property "jadwal_selesai" on array
+in APPPATH\Controllers\Perkuliahan.php on line 150.
+ 1 APPPATH\Controllers\Perkuliahan.php(150): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "jadwal_selesai" on array', 'C:\\xampp_8\\htdocs\\penjadwalan\\app\\Controllers\\Perkuliahan.php', 150)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-29 13:45:58 --> CSRF token verified.
+INFO - 2024-07-29 13:45:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-29 13:45:58 --> ErrorException: Attempt to read property "jadwal_selesai" on array
+in APPPATH\Controllers\Perkuliahan.php on line 150.
+ 1 APPPATH\Controllers\Perkuliahan.php(150): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "jadwal_selesai" on array', 'C:\\xampp_8\\htdocs\\penjadwalan\\app\\Controllers\\Perkuliahan.php', 150)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Perkuliahan->proses_jadwal()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Perkuliahan))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-29 13:46:54 --> CSRF token verified.
+INFO - 2024-07-29 13:46:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 13:46:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 13:53:10 --> CSRF token verified.
+INFO - 2024-07-29 13:53:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 13:53:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 13:53:56 --> CSRF token verified.
+INFO - 2024-07-29 13:53:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 13:54:42 --> CSRF token verified.
+INFO - 2024-07-29 13:54:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 13:54:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 13:55:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 13:55:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 22:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 22:02:18 --> CSRF token verified.
+INFO - 2024-07-29 22:02:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 22:02:59 --> CSRF token verified.
+INFO - 2024-07-29 22:02:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 22:03:10 --> CSRF token verified.
+INFO - 2024-07-29 22:03:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 22:04:55 --> CSRF token verified.
+INFO - 2024-07-29 22:04:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 22:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 22:05:28 --> CSRF token verified.
+INFO - 2024-07-29 22:05:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 22:05:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 22:07:08 --> CSRF token verified.
+INFO - 2024-07-29 22:07:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 22:07:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 22:07:46 --> CSRF token verified.
+INFO - 2024-07-29 22:07:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-29 22:08:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
