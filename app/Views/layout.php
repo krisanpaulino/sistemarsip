@@ -231,7 +231,21 @@
                             <span class="menu-text">Master Unit</span>
                         </a>
                     </li>
-
+                    <li>
+                        <a href="<?= base_url('admin/master/jenis') ?>">
+                            <i class="menu-icon fa fa-object-group"></i>
+                            <span class="menu-text">Master Jenis Arsip</span>
+                        </a>
+                    </li>
+                    <li class="menu-separator">
+                        <hr>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('admin/arsip') ?>">
+                            <i class="menu-icon fa fa-Example fa-folder-open"></i>
+                            <span class="menu-text">Arsip</span>
+                        </a>
+                    </li>
                 </ul><!-- .app-menu -->
             </div><!-- .menubar-scroll-inner -->
         </div><!-- .menubar-scroll -->

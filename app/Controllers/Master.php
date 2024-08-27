@@ -50,10 +50,10 @@ class Master extends BaseController
     {
         // dd(session('user'));
         $model = new JenisModel();
-        $unit = $model->getJenis();
+        $jenis = $model->getJenis();
         $data = [
-            'title' => 'Data Unit',
-            'unit' => $unit
+            'title' => 'Data Jenis',
+            'jenis' => $jenis
         ];
         return view('master_jenis', $data);
     }
