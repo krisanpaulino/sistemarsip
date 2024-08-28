@@ -11,14 +11,14 @@
             <hr class="widget-separator">
             <div class="widget-body">
                 <div class="m-b-lg">
-                    <div class="text-right mb-4">
-                        <button type="button" class="btn btn-outline btn-primary"><i class="fa fa-plus"></i></button>
+                    <div class="text-right m-b-lg">
+                        <a href="<?= base_url(user()->user_tipe . '/arsip/tambah') ?>" class="btn btn-outline btn-primary"><i class="fa fa-plus"></i></a>
                     </div>
-                    <small>
+                    <!-- <small>
                         Data Arsip
-                    </small>
+                    </small> -->
 
-                    <div class="table-responsive">
+                    <div class="table-responsive mt-2">
                         <table id="default-datatable" data-plugin="DataTable" class="table table-striped" cellspacing="0" width="100%">
                             <thead>
                                 <tr>

@@ -5,6 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+$routes->get('/', 'Dashboard::index', ['filter' => 'login']);
 $routes->get('dashboard', 'Dashboard::index', ['filter' => 'login']);
 $routes->get('auth', 'Auth::index');
 $routes->post('logout', 'Auth::logout');
@@ -23,4 +24,5 @@ $routes->group('admin', ['filter' => 'admin'], function ($routes) {
     $routes->post('master/deletejenis', 'Master::deletejenis');
 
     $routes->get('arsip', 'Arsip::index');
+    $routes->get('arsip/tambah', 'Arsip::tambah');
 });

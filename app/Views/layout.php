@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/libs') ?>/bower/animate.css/animate.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/libs') ?>/bower/fullcalendar/dist/fullcalendar.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/libs') ?>/bower/perfect-scrollbar/css/perfect-scrollbar.css">
+    <?= $this->renderSection('cssplugins'); ?>
     <link rel="stylesheet" href="<?= base_url('assets') ?>/css/bootstrap.css">
     <link rel="stylesheet" href="<?= base_url('assets') ?>/css/core.css">
     <link rel="stylesheet" href="<?= base_url('assets') ?>/css/app.css">
@@ -310,6 +311,8 @@
     <script src="<?= base_url('assets/libs') ?>/bower/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
     <script src="<?= base_url('assets/libs') ?>/bower/PACE/pace.min.js"></script>
     <!-- endbuild -->
+    <!-- Conditional Plugins -->
+    <?= $this->renderSection('jsplugins') ?>
 
     <!-- build:js <?= base_url('assets') ?>/js/app.min.js -->
     <script src="<?= base_url('assets') ?>/js/library.js"></script>

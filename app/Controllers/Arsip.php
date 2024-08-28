@@ -19,7 +19,7 @@ class Arsip extends BaseController
             $data['arsip'] = $model->byUnit(session('user')->unit_id);
         return view('arsip_index', $data);
     }
-    function tambahArsip()
+    function tambah()
     {
         $arsip = new ArsipModel();
         $unitModel = new UnitModel();
@@ -31,5 +31,12 @@ class Arsip extends BaseController
             'jenis' => $jenisModel->getJenis()
         ];
         return view('arsip_form', $data);
+    }
+    function save()
+    {
+        $data = $this->request->getPost();
+        $model = new ArsipModel();
+        if ($model->save) {
+        }
     }
 }
