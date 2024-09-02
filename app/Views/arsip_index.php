@@ -37,7 +37,7 @@
                                     <tr>
                                         <td><?= $i++ ?></td>
                                         <td><?= $row->arsip_nomor ?></td>
-                                        <td><?= $row->arsip_tanggal ?></td>
+                                        <td><?= $row->arsip_tanggalarsip ?></td>
                                         <td><?= $row->jenis_nama ?></td>
                                         <?php if (user()->user_tipe == 'admin') ?>
                                         <td><?= $row->unit_nama ?></td>
