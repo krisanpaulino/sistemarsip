@@ -1,4 +1,4 @@
-<?= $this->extend('layout'); ?>
+<?= $this->extend('layout' . user()->user_tipe); ?>
 
 <?= $this->section('main'); ?>
 <div class="row">

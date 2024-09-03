@@ -26,3 +26,9 @@ $routes->group('admin', ['filter' => 'admin'], function ($routes) {
     $routes->get('arsip', 'Arsip::index');
     $routes->get('arsip/tambah', 'Arsip::tambah');
 });
+$routes->group('operator', ['filter' => 'operator'], function ($routes) {
+    $routes->get('arsip', 'Arsip::index');
+    $routes->get('arsip/tambah', 'Arsip::tambah');
+    $routes->post('arsip/save', 'Arsip::save');
+    $routes->post('arsip/delete', 'Arsip::delete');
+});

@@ -69,4 +69,10 @@ class ArsipModel extends Model
         $this->where('arsip.unit_id', $unit_id);
         return $this->find();
     }
+    function getNotUnit()
+    {
+        $unit_id = user()->unit_id;
+        $this->whereNotIn('unit_id', [$unit_id]);
+        return $this->find();
+    }
 }

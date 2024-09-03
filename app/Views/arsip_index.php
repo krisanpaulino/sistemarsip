@@ -1,4 +1,4 @@
-<?= $this->extend('layout'); ?>
+<?= $this->extend('layout' . user()->user_tipe); ?>
 
 <?= $this->section('main'); ?>
 <div class="row">
@@ -43,6 +43,11 @@
                                         <td><?= $row->unit_nama ?></td>
 
                                         <td>
+                                            <form action="<?= base_url(user()->user_tipe . '/arsip/download') ?>" method="post">
+                                                <?= csrf_field() ?>
+                                                <input type="hidden" name="id" value="<?= $row->arsip_id ?>" class="d-flex d-none">
+                                                <button type="submit" class="btn btn-primary btn-xs">Download</button>
+                                            </form>
                                             <button href="#" data-toggle="modal" data-target="#hapus" data-id="<?= $row->arsip_id ?>" class="btn btn-danger btn-xs">Hapus</button>
                                         </td>
                                     </tr>
