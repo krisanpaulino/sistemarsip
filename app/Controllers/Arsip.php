@@ -38,8 +38,53 @@ class Arsip extends BaseController
     {
         $data = $this->request->getPost();
         $model = new ArsipModel();
-        if ($model->save) {
+        //Insert Data untuk dapat ID
+        if ($data['id'] == null) {
+            if (!$id = $model->insert($data, true))
+                return redirect()->back()->with('danger', 'Gagal! data tidak valid')->with('errors', $model->errors())->withInput();
+        } else {
+            $id = $data['id'];
         }
+
+        $validationRule = [
+            'file' => [
+                'label' => 'Image File',
+                'rules' => [
+                    'uploaded[file]',
+                    'mime_in[file,image/jpg,image/jpeg,image/gif,image/png,image/webp,application/pdf]',
+                ],
+            ],
+        ];
+        if (! $this->validateData($data, $validationRule)) {
+            $model->where('arsip_id', $id);
+            $model->delete();
+            $data = ['errors' => $this->validator->getErrors()];
+            dd($data['errors']);
+        }
+
+        $file = $this->request->getFile('file');
+
+        if (! $file->hasMoved()) {
+            // $filepath = WRITEPATH . 'uploads/' . $file->store();
+            $filename = 'arsip_' . $id . '.' . $file->getClientExtension();
+            if (!$file->move(WRITEPATH . 'uploads/', $filename, true)) {
+                if ($data['id'] == null) { //IF INSERT
+                    $model->where('arsip_id', $id);
+                    $model->delete();
+                }
+                return redirect()->back()->with('danger', 'Gagal! file gagal diupload')->withInput();
+            }
+            $data['arsip_file'] = $filename;
+            $model->where('arsip_id', $id);
+            $model->set($data);
+            if (!$model->update())
+                dd('error updating data');
+        } else {
+            $model->where('arsip_id', $id);
+            $model->delete();
+            return redirect()->to('arsip')->with('danger', 'Gagal! Terjadi kesalahan saat mengupload file!');
+        }
+        return redirect()->to(user()->user_tipe . 'arsip')->with('success', 'Data arsip berhasil disimpan!');
     }
 
     function download()

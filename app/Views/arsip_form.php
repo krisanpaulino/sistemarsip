@@ -21,7 +21,7 @@
                 </div>
                 <form action="<?= base_url(user()->user_tipe . '/arsip/save') ?>" method="post" enctype="multipart/form-data">
                     <?= csrf_field() ?>
-                    <input type="hidden" name="arsip_id" value="<?= $arsip->arsip_id ?>" class="d-flex d-none">
+                    <input type="hidden" name="id" value="<?= $arsip->arsip_id ?>" class="d-flex d-none">
                     <div class="form-group mb-4">
                         <label for="jenis_id">Jenis Arsip</label>
                         <select type="text" class="form-control <?= (isset(session('errors')['jenis_id'])) ? 'is-invalid' : '' ?>" id="jenis_id" name="jenis_id" data-plugin="select2" ata-options="{ placeholder: 'Pilih jenis arsip', allowClear: true }">
@@ -61,7 +61,12 @@
                     </div>
                     <div class="form-group mb-4">
                         <label for="arsip_tanggalarsip">Tanggal Arsip</label>
-                        <input type="text" class="form-control <?= (isset(session('errors')['arsip_tanggalarsip'])) ? 'is-invalid' : '' ?>" id="arsip_tanggalarsip" name="arsip_tanggalarsip" value="<?= old('arsip_tanggalarsip', $arsip->tanggal_arsip) ?>">
+                        <div class='input-group date' id='datetimepicker4' data-plugin="datetimepicker" data-options="{ viewMode: 'years', format: 'YYYY-MM-DD' }">
+                            <input type="text" class="form-control <?= (isset(session('errors')['arsip_tanggalarsip'])) ? 'is-invalid' : '' ?>" id="arsip_tanggalarsip" name="arsip_tanggalarsip" value="<?= old('arsip_tanggalarsip', $arsip->tanggal_arsip) ?>">
+                            <span class="input-group-addon bg-info text-white">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
                         <div class="invalid-feedback">
                             <?php if (isset(session('errors')['arsip_tanggalarsip'])) : ?>
                                 <?= session('errors')['arsip_tanggalarsip'] ?>
