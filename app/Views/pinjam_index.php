@@ -12,7 +12,7 @@
             <div class="widget-body">
                 <div class="m-b-lg">
                     <div class="text-right m-b-lg">
-                        <a href="<?= base_url(user()->user_tipe . '/arsip/tambah') ?>" class="btn btn-outline btn-primary"><i class="fa fa-plus"></i></a>
+                        <a href="<?= base_url(user()->user_tipe . '/pinjam/pinjam') ?>" class="btn btn-outline btn-primary"><i class="fa fa-plus"></i> Pinjam Arsip</a>
                     </div>
                     <!-- <small>
                         Data Arsip
@@ -23,35 +23,46 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Nomor</th>
-                                    <th>Perihal</th>
-                                    <th>Tanggal Arsip</th>
+                                    <th>Nomor Arsip</th>
                                     <th>Jenis Arsip</th>
+                                    <th>Perihal Arsip</th>
+                                    <th>Tanggal Arsip</th>
+                                    <th>Unit Asal Arsip</th>
                                     <?php if (user()->user_tipe == 'admin') ?>
-                                    <th>Unit</th>
-                                    <th>Action</th>
+                                    <th>Unit Peminjam</th>
+                                    <th>Pinjam Sampai</th>
+                                    <th>Action/Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $i = 1;
-                                foreach ($arsip as $row) : ?>
+                                foreach ($pinjam as $row) : ?>
                                     <tr>
                                         <td><?= $i++ ?></td>
                                         <td><?= $row->arsip_nomor ?></td>
+                                        <td><?= $row->jenis_nama ?></td>
                                         <td><?= $row->arsip_perihal ?></td>
                                         <td><?= $row->arsip_tanggalarsip ?></td>
-                                        <td><?= $row->jenis_nama ?></td>
-                                        <?php if (user()->user_tipe == 'admin') ?>
                                         <td><?= $row->unit_nama ?></td>
+                                        <?php if (user()->user_tipe == 'admin') ?>
+                                        <td><?= $row->unit_pinjam ?></td>
+                                        <td><?= $row->pinjam_sampai ?></td>
 
                                         <td>
-                                            <form action="<?= base_url(user()->user_tipe . '/arsip/download') ?>" method="post">
-                                                <?= csrf_field() ?>
-                                                <input type="hidden" name="id" value="<?= $row->arsip_id ?>" class="d-flex d-none">
-                                                <button type="submit" class="btn btn-primary btn-xs">Download</button>
-                                                <button href="#" type="button" data-toggle="modal" data-target="#hapus" data-id="<?= $row->arsip_id ?>" class="btn btn-danger btn-xs">Hapus</button>
-                                            </form>
+                                            <?php if ($row->pinjam_approved != '1') : ?>
+                                                <?php if ($row->pinjam_approved == 'unchecked'):  ?>
+                                                    Sedang dikonfirmasi admin.
+                                                <?php else : ?>
+                                                    Ditolak.
+                                                <?php endif; ?>
 
+                                            <?php else : ?>
+                                                <form action="<?= base_url(user()->user_tipe . '/arsip/download') ?>" method="post">
+                                                    <?= csrf_field() ?>
+                                                    <input type="hidden" name="id" value="<?= $row->arsip_id ?>" class="d-flex d-none">
+                                                    <button type="submit" class="btn btn-primary btn-xs">Download</button>
+                                                </form>
+                                            <?php endif; ?>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

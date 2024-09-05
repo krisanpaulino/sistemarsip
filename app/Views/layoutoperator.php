@@ -126,6 +126,18 @@
     <main id="app-main" class="app-main">
         <div class="wrap">
             <section class="app-content">
+                <?php if (session()->has('success')) : ?>
+                    <div class="alert alert-success alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <?= session('success') ?>
+                    </div>
+                <?php endif; ?>
+                <?php if (session()->has('danger')) : ?>
+                    <div class="alert alert-danger alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <?= session('danger') ?>
+                    </div>
+                <?php endif; ?>
                 <?= $this->renderSection('main'); ?>
                 <div class="modal fade in" id="logout" tabindex="-1" role="dialog">
                     <div class="modal-dialog" role="document">

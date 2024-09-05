@@ -7,6 +7,8 @@ use App\Models\ArsipModel;
 use App\Models\JenisModel;
 use App\Models\PinjamModel;
 use App\Models\UnitModel;
+use CodeIgniter\Files\File;
+
 // use CodeIgniter\Files\File;
 
 class Arsip extends BaseController
@@ -18,7 +20,7 @@ class Arsip extends BaseController
         if (session('user')->user_tipe == 'admin')
             $data['arsip'] = $model->getArsip();
         else
-            $data['arsip'] = $model->byUnit(session('user')->unit_id);
+            $data['arsip'] = $model->byUnit(user()->unit_id);
         return view('arsip_index', $data);
     }
     function tambah()
@@ -37,10 +39,13 @@ class Arsip extends BaseController
     function save()
     {
         $data = $this->request->getPost();
+        if (session('user')->user_tipe == 'operator')
+            $data['unit_id'] = user()->unit_id;
         $model = new ArsipModel();
         //Insert Data untuk dapat ID
         if ($data['id'] == null) {
             if (!$id = $model->insert($data, true))
+                // dd($model->errors());
                 return redirect()->back()->with('danger', 'Gagal! data tidak valid')->with('errors', $model->errors())->withInput();
         } else {
             $id = $data['id'];
@@ -74,17 +79,21 @@ class Arsip extends BaseController
                 }
                 return redirect()->back()->with('danger', 'Gagal! file gagal diupload')->withInput();
             }
-            $data['arsip_file'] = $filename;
+            $update = ['arsip_file' => $filename];
+            // dd($id);
             $model->where('arsip_id', $id);
-            $model->set($data);
-            if (!$model->update())
+            // $model->set($update);
+            if (!$model->update($id, $update)) {
                 dd('error updating data');
+                $model->where('arsip_id', $id);
+                $model->delete();
+            }
         } else {
             $model->where('arsip_id', $id);
             $model->delete();
             return redirect()->to('arsip')->with('danger', 'Gagal! Terjadi kesalahan saat mengupload file!');
         }
-        return redirect()->to(user()->user_tipe . 'arsip')->with('success', 'Data arsip berhasil disimpan!');
+        return redirect()->to(user()->user_tipe . '/arsip')->with('success', 'Data arsip berhasil disimpan!');
     }
 
     function download()
@@ -98,7 +107,16 @@ class Arsip extends BaseController
         // if (!$file)
         //     return redirect()->back()->with('danger', 'File tidak ditemukan!');
         // $file->getBasename();
-        $this->response->download(WRITEPATH . 'uploads/' . $arsip->filename);
+        $filePath = WRITEPATH . 'uploads/' . $arsip->arsip_file;
+
+        // Set the Content-Type header to application/octet-stream
+        header('Content-Type: application/octet-stream');
+
+        // Set the Content-Disposition header to the filename of the downloaded file
+        header('Content-Disposition: attachment; filename="' . $arsip->arsip_file . '"');
+
+        // Read the contents of the file and output it to the browser.
+        readfile($filePath);
     }
 
     function pinjamIndex()
@@ -118,19 +136,19 @@ class Arsip extends BaseController
         $arsip_pinjam = $arsipModel->getNotUnit();
         $data = [
             'title' => 'Form Pinjam Arsip',
-            'pinjam' => $arsip_pinjam
+            'arsip' => $arsip_pinjam
         ];
         return view('pinjam_form', $data);
     }
 
     function pinjam()
     {
-        $unit_id = session('user')->unit_id;
+        $unit_id = user()->unit_id;
         $arsip_id = $this->request->getPost('id');
         // $arsipModel = new ArsipModel();
         $pinjamModel = new PinjamModel();
 
-        if ($pinjamModel->cekPinjam($unit_id, $arsip_id) != null)
+        if ($pinjamModel->cekPinjam($unit_id, $arsip_id) != false)
             return redirect()->back()->with('danger', 'Anda masih memiliki akses untuk file ini ');
 
         $data = [
@@ -141,27 +159,42 @@ class Arsip extends BaseController
         ];
 
         if (!$pinjamModel->insert($data))
+            // dd($pinjamModel->errors());
             return redirect()->back()->with('danger', 'Periksa kembali data yang anda masukkan')->with('errors', $pinjamModel->errors());
 
-        redirect()->back()->with('success', 'Peminjaman anda berhasil direkam. Silahkan menunggu admin melakukan konfirmasi peminjaman anda.');
+        return redirect()->back()->with('success', 'Peminjaman anda berhasil direkam. Silahkan menunggu admin melakukan konfirmasi peminjaman anda.');
     }
 
-    function downloadPinjam()
+    public function downloadPinjam()
     {
-        $unit_id = session('user')->unit_id;
+        $unit_id = user()->unit_id;
         $arsip_id = $this->request->getPost('id');
         $arsipModel = new ArsipModel();
         $pinjamModel = new PinjamModel();
 
-        if (!$pinjam = $pinjamModel->cekPinjam($unit_id, $arsip_id))
-            return redirect()->back()->with('danger', 'Anda tidak memiliki akses untuk file ini');
+        if ($pinjam = $pinjamModel->cekPinjam($unit_id, $arsip_id) == false) {
+            // dd($pinjam);
+            return redirect()->to(session('user')->user_tipe . '/arsip')->with('danger', 'Anda tidak memiliki akses untuk file ini');
+            exit;
+        }
         $arsip = $arsipModel->find($arsip_id);
         if ($arsip == null)
-            return redirect()->back()->with('danger', 'Data arsip tidak ditemukan!');
-        // $file = new File(WRITEPATH . 'uploads/' . $arsip->filename, true);
-        // if (!$file)
-        //     return redirect()->back()->with('danger', 'File tidak ditemukan!');
-        // $file->getBasename();
-        $this->response->download(WRITEPATH . 'uploads/' . $arsip->filename);
+            return redirect()->to(session('user')->user_tipe . '/arsip')->with('danger', 'Data arsip tidak ditemukan!');
+        // dd($arsip);
+        $file = new File(WRITEPATH . 'uploads\\' . $arsip->arsip_file, true);
+        if (!$file)
+            return redirect()->back()->with('danger', 'File tidak ditemukan!');
+
+        $filePath = WRITEPATH . 'uploads/' . $arsip->arsip_file;
+
+        // Set the Content-Type header to application/octet-stream
+        header('Content-Type: application/octet-stream');
+
+        // Set the Content-Disposition header to the filename of the downloaded file
+        header('Content-Disposition: attachment; filename="' . $arsip->arsip_file . '"');
+
+        // Read the contents of the file and output it to the browser.
+        readfile($filePath);
+        // exit;
     }
 }

@@ -32,4 +32,9 @@ $routes->group('operator', ['filter' => 'operator'], function ($routes) {
     $routes->get('arsip/tambah', 'Arsip::tambah');
     $routes->post('arsip/save', 'Arsip::save');
     $routes->post('arsip/delete', 'Arsip::delete');
+    $routes->post('arsip/download', 'Arsip::downloadPinjam');
+
+    $routes->get('pinjam', 'Arsip::pinjamIndex');
+    $routes->post('pinjam', 'Arsip::pinjam');
+    $routes->get('pinjam/pinjam', 'Arsip::pinjamForm');
 });

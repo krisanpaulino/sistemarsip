@@ -55,8 +55,11 @@ class PinjamModel extends Model
 
     function getPinjam($pinjam_id = null)
     {
+        $this->select('pinjam.*, arsip.*, jenis.*, unit.*, a.unit_id as unit_pinjam_id, a.unit_nama as unit_pinjam');
         $this->join('unit', 'unit.unit_id = pinjam.unit_id');
         $this->join('arsip', 'arsip.arsip_id = pinjam.arsip_id');
+        $this->join('unit a', 'a.unit_id = arsip.unit_id');
+        $this->join('jenis', 'arsip.jenis_id = jenis.jenis_id');
         if (session('user')->user_tipe == 'operator')
             $this->where('pinjam.unit_id', user()->unit_id);
         if ($pinjam_id != null) {
@@ -76,12 +79,15 @@ class PinjamModel extends Model
 
     function cekPinjam($unit_id, $arsip_id)
     {
+        $this->join('arsip', 'arsip.arsip_id = pinjam.arsip_id and pinjam.arsip_id = ' . $arsip_id, 'right');
         $this->where('pinjam.unit_id', $unit_id);
-        $this->where('pinjam.arsip_id', $arsip_id);
+        // $this->where('pinjam.arsip_id', $arsip_id);
         $this->where('pinjam_approved', '1');
         $this->where('pinjam_sampai >=', date('Y-m-d'), false);
+        $this->orWhere('pinjam.unit_id', $unit_id);
         $result = $this->first();
-        if (empty('$result'))
+        // dd($result);
+        if (empty($result))
             return false;
         else
             return $result;

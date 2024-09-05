@@ -60,6 +60,15 @@
                         </div>
                     </div>
                     <div class="form-group mb-4">
+                        <label for="arsip_perihal">Perihal</label>
+                        <input type="text" class="form-control <?= (isset(session('errors')['arsip_perihal'])) ? 'is-invalid' : '' ?>" id="arsip_perihal" name="arsip_perihal" value="<?= old('arsip_perihal', $arsip->arsip_perihal) ?>">
+                        <div class="invalid-feedback">
+                            <?php if (isset(session('errors')['arsip_perihal'])) : ?>
+                                <?= session('errors')['arsip_perihal'] ?>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="form-group mb-4">
                         <label for="arsip_tanggalarsip">Tanggal Arsip</label>
                         <div class='input-group date' id='datetimepicker4' data-plugin="datetimepicker" data-options="{ viewMode: 'years', format: 'YYYY-MM-DD' }">
                             <input type="text" class="form-control <?= (isset(session('errors')['arsip_tanggalarsip'])) ? 'is-invalid' : '' ?>" id="arsip_tanggalarsip" name="arsip_tanggalarsip" value="<?= old('arsip_tanggalarsip', $arsip->tanggal_arsip) ?>">

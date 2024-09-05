@@ -19,7 +19,9 @@ class ArsipModel extends Model
         'arsip_tanggalarsip',
         'arsip_tanggalrekam',
         'unit_id',
-        'deleted'
+        'deleted',
+        'arsip_file',
+        'arsip_perihal'
     ];
 
     // Dates
@@ -35,6 +37,7 @@ class ArsipModel extends Model
         'arsip_nomor' => 'required',
         'arsip_tanggalarsip' => 'required',
         'unit_id' => 'required',
+        'arsip_perihal' => 'required'
     ];
     protected $validationMessages   = [];
     protected $skipValidation       = false;
@@ -71,8 +74,10 @@ class ArsipModel extends Model
     }
     function getNotUnit()
     {
+        $this->join('jenis', 'jenis.jenis_id = arsip.jenis_id');
+        $this->join('unit', 'unit.unit_id = arsip.unit_id');
         $unit_id = user()->unit_id;
-        $this->whereNotIn('unit_id', [$unit_id]);
+        $this->whereNotIn('arsip.unit_id', [$unit_id]);
         return $this->find();
     }
 }

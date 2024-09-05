@@ -22,7 +22,7 @@ class CreatePinjam extends Migration
             ],
             'pinjam_waktu' => [
                 'type' => 'DATETIME',
-                'default' => new RawSql('CURRENT_DATETIME')
+                'default' => new RawSql('CURRENT_TIMESTAMP')
             ],
             'pinjam_approved' => [
                 'type' => 'ENUM',
