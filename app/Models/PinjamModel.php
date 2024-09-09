@@ -62,6 +62,8 @@ class PinjamModel extends Model
         $this->join('jenis', 'arsip.jenis_id = jenis.jenis_id');
         if (session('user')->user_tipe == 'operator')
             $this->where('pinjam.unit_id', user()->unit_id);
+        else
+            $this->where('pinjam_approved != ', 'unchecked', true);
         if ($pinjam_id != null) {
             $this->where('pinjam_id', $pinjam_id);
             return $this->first();
@@ -91,5 +93,20 @@ class PinjamModel extends Model
             return false;
         else
             return $result;
+    }
+
+    function getRequest()
+    {
+        if (user()->user_tipe == 'operator') {
+            $this->where(user()->user_tipe);
+        }
+        $this->select('pinjam.*, arsip.*, jenis.*, unit.*, a.unit_id as unit_pinjam_id, a.unit_nama as unit_pinjam');
+        $this->join('unit', 'unit.unit_id = pinjam.unit_id');
+        $this->join('arsip', 'arsip.arsip_id = pinjam.arsip_id');
+        $this->join('unit a', 'a.unit_id = arsip.unit_id');
+        $this->join('jenis', 'arsip.jenis_id = jenis.jenis_id');
+        $this->where('pinjam.pinjam_approved', 'unchecked');
+        $result = $this->find();
+        return $result;
     }
 }

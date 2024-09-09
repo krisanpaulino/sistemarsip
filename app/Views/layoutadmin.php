@@ -51,7 +51,7 @@
                         </a>
                     </li>
                     <li>
-                        <h5 class="page-title hidden-menubar-top hidden-float">Dashboard</h5>
+                        <h5 class="page-title hidden-menubar-top hidden-float"><?= $title ?></h5>
                     </li>
                 </ul>
 
@@ -139,6 +139,17 @@
                             <span class="menu-text">Arsip</span>
                         </a>
                     </li>
+                    <li class="has-submenu">
+                        <a href="javascript:void(0)" class="submenu-toggle">
+                            <i class="menu-icon fa fa-Example fa-folder-open"></i>
+                            <span class="menu-text">Peminjaman</span>
+                            <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="<?= base_url('admin/pinjam/request') ?>"><span class="menu-text">Request Pinjam</span></a></li>
+                            <li><a href="<?= base_url('admin/pinjam/riwayat') ?>"><span class="menu-text">Riwayat Pinjam Arsip</span></a></li>
+                        </ul>
+                    </li>
                 </ul><!-- .app-menu -->
             </div><!-- .menubar-scroll-inner -->
         </div><!-- .menubar-scroll -->
@@ -150,6 +161,18 @@
     <main id="app-main" class="app-main">
         <div class="wrap">
             <section class="app-content">
+                <?php if (session()->has('success')) : ?>
+                    <div class="alert alert-success alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <?= session('success') ?>
+                    </div>
+                <?php endif; ?>
+                <?php if (session()->has('danger')) : ?>
+                    <div class="alert alert-danger alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <?= session('danger') ?>
+                    </div>
+                <?php endif; ?>
                 <?= $this->renderSection('main'); ?>
                 <div class="modal fade in" id="logout" tabindex="-1" role="dialog">
                     <div class="modal-dialog" role="document">

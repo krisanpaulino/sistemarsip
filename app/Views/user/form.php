@@ -1,4 +1,4 @@
-<?= $this->extend('layout'); ?>
+<?= $this->extend('layoutadmin'); ?>
 <?= $this->section('main'); ?>
 <div class="row float-center">
     <div class="col-md-6 col-md-offset-3">
@@ -39,7 +39,7 @@
                     </div>
                     <div class="form-group mb-4">
                         <label for="user_password">Password</label>
-                        <input type="password" class="form-control <?= (isset(session('errors')['user_password'])) ? 'is-invalid' : '' ?>" id="user_password" name="password" value="<?= old('user_password') ?>">
+                        <input type="password" class="form-control <?= (isset(session('errors')['user_password'])) ? 'is-invalid' : '' ?>" id="user_password" name="user_password" value="<?= old('user_password') ?>">
                         <div class="invalid-feedback">
                             <?php if (isset(session('errors')['user_password'])) : ?>
                                 <?= session('errors')['user_password'] ?>

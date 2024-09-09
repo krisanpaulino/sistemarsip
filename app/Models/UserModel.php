@@ -67,6 +67,8 @@ class UserModel extends Model
     }
     function findActive()
     {
+        $this->join('operator', 'operator.user_id = user.user_id', 'left');
+        $this->join('unit', 'unit.unit_id = operator.unit_id', 'left');
         $this->where('user_aktif', 1);
         return $this->find();
     }

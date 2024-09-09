@@ -162,7 +162,7 @@ class Arsip extends BaseController
             // dd($pinjamModel->errors());
             return redirect()->back()->with('danger', 'Periksa kembali data yang anda masukkan')->with('errors', $pinjamModel->errors());
 
-        return redirect()->back()->with('success', 'Peminjaman anda berhasil direkam. Silahkan menunggu admin melakukan konfirmasi peminjaman anda.');
+        return redirect()->to('operator/pinjam')->with('success', 'Peminjaman anda berhasil direkam. Silahkan menunggu admin melakukan konfirmasi peminjaman anda.');
     }
 
     public function downloadPinjam()
@@ -196,5 +196,45 @@ class Arsip extends BaseController
         // Read the contents of the file and output it to the browser.
         readfile($filePath);
         // exit;
+    }
+
+    function requestPinjam()
+    {
+        $model = new PinjamModel();
+        $pinjam = $model->getRequest();
+        $data = [
+            'title' => 'Permintaan Pinjam Arsip',
+            'pinjam' => $pinjam
+        ];
+        return view('pinjam_request', $data);
+    }
+
+    function respondPinjam()
+    {
+        $id = $this->request->getPost('id');
+        $action = $this->request->getPost('action');
+        // dd($action);
+        if ($action == 'approve') {
+            $data['pinjam_approved'] = '1';
+            $data['pinjam_sampai'] = $this->request->getPost('pinjam_tanggalsampai');
+        } else {
+            $data['pinjam_approved'] = '0';
+        }
+        // dd($this->request->getPost());
+        $model = new PinjamModel();
+        $model->where('pinjam_id', $id);
+        $model->set($data);
+        $model->update();
+        return redirect()->back()->with('success', 'Permintaan berhasil diupdate');
+    }
+    function riwayatPinjam()
+    {
+        $model = new PinjamModel();
+        $pinjam = $model->getPinjam();
+        $data = [
+            'title' => 'Data Pinjam Arsip',
+            'pinjam' => $pinjam
+        ];
+        return view('pinjam_index', $data);
     }
 }

@@ -11,6 +11,7 @@ $routes->get('auth', 'Auth::index');
 $routes->post('logout', 'Auth::logout');
 $routes->post('dologin', 'Auth::login');
 $routes->group('admin', ['filter' => 'admin'], function ($routes) {
+    $routes->get('user', 'User::index');
     $routes->get('user/signup', 'User::signup');
     $routes->post('user/register', 'User::register');
     $routes->get('user/signup', 'User::signup');
@@ -26,6 +27,10 @@ $routes->group('admin', ['filter' => 'admin'], function ($routes) {
     $routes->get('arsip', 'Arsip::index');
     $routes->get('arsip/tambah', 'Arsip::tambah');
     $routes->post('arsip/save', 'Arsip::save');
+
+    $routes->get('pinjam/request', 'Arsip::requestPinjam');
+    $routes->get('pinjam/riwayat', 'Arsip::riwayatPinjam');
+    $routes->post('pinjam/respon', 'Arsip::respondPinjam');
 });
 $routes->group('operator', ['filter' => 'operator'], function ($routes) {
     $routes->get('arsip', 'Arsip::index');

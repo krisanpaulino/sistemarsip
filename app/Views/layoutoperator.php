@@ -115,6 +115,12 @@
                             <span class="menu-text">Arsip Unit</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="<?= base_url('operator/pinjam') ?>">
+                            <i class="menu-icon fa fa-Example fa-folder-open"></i>
+                            <span class="menu-text">Pinjam Arsip</span>
+                        </a>
+                    </li>
                 </ul><!-- .app-menu -->
             </div><!-- .menubar-scroll-inner -->
         </div><!-- .menubar-scroll -->

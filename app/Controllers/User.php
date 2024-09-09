@@ -9,6 +9,15 @@ use App\Models\UserModel;
 
 class User extends BaseController
 {
+    function index()
+    {
+        $model = new UserModel();
+        $data = [
+            'title' => 'Data User',
+            'user' => $model->findActive()
+        ];
+        return view('user/index', $data);
+    }
     public function signup()
     {
         // dd(session('user'));
@@ -39,7 +48,7 @@ class User extends BaseController
             $opModel = new OperatorModel();
             if (!$opModel->insert($operator)) {
                 $model->where('user_id', $id)->delete();
-                dd($opModel->errors());
+                // dd($opModel->errors());
                 return redirect()->back()->with('errors', 'Gagal menambahkan data operator');
             }
         }

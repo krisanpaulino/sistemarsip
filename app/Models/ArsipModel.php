@@ -21,7 +21,7 @@ class ArsipModel extends Model
         'unit_id',
         'deleted',
         'arsip_file',
-        'arsip_perihal'
+        'arsip_perihal',
     ];
 
     // Dates
