@@ -8,7 +8,7 @@ class UserModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'user';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'user_id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
@@ -31,7 +31,7 @@ class UserModel extends Model
     protected $validationRules      = [
         'username' => 'required|is_unique[user.username]',
         'user_password' => 'required',
-        'user_password' => 'required|matches[user_password]',
+        'password_confirmation' => 'required|matches[user_password]',
         'user_tipe' => 'required',
     ];
     protected $validationMessages   = [];
@@ -41,8 +41,8 @@ class UserModel extends Model
     // Callbacks
     protected $allowCallbacks = true;
     protected $beforeInsert   = ['hashPassword'];
-    protected $afterInsert    = ['hashPassword'];
-    protected $beforeUpdate   = [];
+    protected $afterInsert    = [];
+    protected $beforeUpdate   = ['hashpassword'];
     protected $afterUpdate    = [];
     protected $beforeFind     = [];
     protected $afterFind      = [];

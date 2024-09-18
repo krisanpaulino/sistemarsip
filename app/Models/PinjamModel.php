@@ -55,7 +55,7 @@ class PinjamModel extends Model
 
     function getPinjam($pinjam_id = null)
     {
-        $this->select('pinjam.*, arsip.*, jenis.*, unit.*, a.unit_id as unit_pinjam_id, a.unit_nama as unit_pinjam');
+        $this->select('pinjam.*, arsip.*, jenis.*, unit.*, a.unit_id as unit_asal_id, a.unit_nama as unit_asal');
         $this->join('unit', 'unit.unit_id = pinjam.unit_id');
         $this->join('arsip', 'arsip.arsip_id = pinjam.arsip_id');
         $this->join('unit a', 'a.unit_id = arsip.unit_id');
@@ -85,8 +85,8 @@ class PinjamModel extends Model
         $this->where('pinjam.unit_id', $unit_id);
         // $this->where('pinjam.arsip_id', $arsip_id);
         $this->where('pinjam_approved', '1');
-        $this->where('pinjam_sampai >=', date('Y-m-d'), false);
-        $this->orWhere('pinjam.unit_id', $unit_id);
+        $this->where('pinjam_sampai >=', date('Y-m-d'), true);
+        // $this->orWhere('pinjam.unit_id', $unit_id);
         $result = $this->first();
         // dd($result);
         if (empty($result))

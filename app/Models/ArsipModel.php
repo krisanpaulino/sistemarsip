@@ -62,6 +62,7 @@ class ArsipModel extends Model
             $this->where('arsip_id', $arsip_id);
             return $this->first();
         }
+        $this->where('arsip.deleted', '0');
 
         return $this->find();
     }
@@ -70,6 +71,7 @@ class ArsipModel extends Model
         $this->join('jenis', 'jenis.jenis_id = arsip.jenis_id');
         $this->join('unit', 'unit.unit_id = arsip.unit_id');
         $this->where('arsip.unit_id', $unit_id);
+        $this->where('arsip.deleted', '0');
         return $this->find();
     }
     function getNotUnit()
@@ -78,6 +80,7 @@ class ArsipModel extends Model
         $this->join('unit', 'unit.unit_id = arsip.unit_id');
         $unit_id = user()->unit_id;
         $this->whereNotIn('arsip.unit_id', [$unit_id]);
+        $this->where('arsip.deleted', '0');
         return $this->find();
     }
 }

@@ -73,7 +73,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('admin/arsip/deletearsip') ?>" method="post">
+            <form action="<?= base_url('operator/arsip/delete') ?>" method="post">
                 <div class="modal-body">
                     <?= csrf_field() ?>
                     <input type="hidden" name="id" id="kodeitem" class="d-flex d-none">

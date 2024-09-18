@@ -7,6 +7,8 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Dashboard::index', ['filter' => 'login']);
 $routes->get('dashboard', 'Dashboard::index', ['filter' => 'login']);
+$routes->get('ganti-password', 'User::gantiPassword', ['filter' => 'login']);
+$routes->post('ganti-password', 'User::updatePassword', ['filter' => 'login']);
 $routes->get('auth', 'Auth::index');
 $routes->post('logout', 'Auth::logout');
 $routes->post('dologin', 'Auth::login');

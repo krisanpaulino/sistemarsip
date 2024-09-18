@@ -11,9 +11,11 @@
             <hr class="widget-separator">
             <div class="widget-body">
                 <div class="m-b-lg">
-                    <div class="text-right m-b-lg">
-                        <a href="<?= base_url(user()->user_tipe . '/pinjam/pinjam') ?>" class="btn btn-outline btn-primary"><i class="fa fa-plus"></i> Pinjam Arsip</a>
-                    </div>
+                    <?php if (user()->user_tipe == 'operator') : ?>
+                        <div class="text-right m-b-lg">
+                            <a href="<?= base_url(user()->user_tipe . '/pinjam/pinjam') ?>" class="btn btn-outline btn-primary"><i class="fa fa-plus"></i> Pinjam Arsip</a>
+                        </div>
+                    <?php endif; ?>
                     <!-- <small>
                         Data Arsip
                     </small> -->
@@ -43,9 +45,9 @@
                                         <td><?= $row->jenis_nama ?></td>
                                         <td><?= $row->arsip_perihal ?></td>
                                         <td><?= $row->arsip_tanggalarsip ?></td>
-                                        <td><?= $row->unit_nama ?></td>
+                                        <td><?= $row->unit_asal ?></td>
                                         <?php if (user()->user_tipe == 'admin') ?>
-                                        <td><?= $row->unit_pinjam ?></td>
+                                        <td><?= $row->unit_nama ?></td>
                                         <td><?= $row->pinjam_sampai ?></td>
 
                                         <td>
@@ -57,11 +59,20 @@
                                                 <?php endif; ?>
 
                                             <?php else : ?>
-                                                <form action="<?= base_url(user()->user_tipe . '/arsip/download') ?>" method="post">
-                                                    <?= csrf_field() ?>
-                                                    <input type="hidden" name="id" value="<?= $row->arsip_id ?>" class="d-flex d-none">
-                                                    <button type="submit" class="btn btn-primary btn-xs">Download</button>
-                                                </form>
+                                                <?php if (user()->user_tipe == 'operator' && strtotime($row->pinjam_sampai >= strtotime(date('Y-m-d'))) && $row->pinjam_approved == 1) : ?>
+                                                    <form action="<?= base_url(user()->user_tipe . '/arsip/download') ?>" method="post">
+                                                        <?= csrf_field() ?>
+                                                        <input type="hidden" name="id" value="<?= $row->arsip_id ?>" class="d-flex d-none">
+                                                        <button type="submit" class="btn btn-primary btn-xs">Download</button>
+                                                    </form>
+                                                <?php elseif ($row->pinjam_approved == 1) : ?>
+                                                    Lewat batas pinjam.
+                                                <?php elseif ($row->pinjam_approved == 0) : ?>
+                                                    Ditolak
+                                                <?php elseif ($row->pinjam_approved == 'checked') : ?>
+                                                    Sedang diperiksa admin.
+                                                <?php endif ?>
+
                                             <?php endif; ?>
                                         </td>
                                     </tr>

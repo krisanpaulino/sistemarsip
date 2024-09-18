@@ -49,9 +49,40 @@ class User extends BaseController
             if (!$opModel->insert($operator)) {
                 $model->where('user_id', $id)->delete();
                 // dd($opModel->errors());
-                return redirect()->back()->with('errors', 'Gagal menambahkan data operator');
+                return redirect()->back()->with('danger', 'Gagal menambahkan data operator');
             }
         }
         return redirect()->back()->with('success', 'Berhasil!');
+    }
+    function gantiPassword()
+    {
+        $user = user();
+        $data = [
+            'user' => $user,
+            'title' => 'Ganti Password',
+        ];
+        return view('user/gantipassword', $data);
+    }
+    function updatePassword()
+    {
+        // $user_id = user()->user_id;
+        $current_password = $this->request->getPost('current_password');
+        $model = new UserModel();
+        $user = user();
+        //cek validasi password 
+        if (!password_verify($current_password, $user->user_password))
+            return redirect()->back()->with('danger', 'Password anda salah');
+        $data = [
+            'user_password' => $this->request->getPost('user_password'),
+            'password_confirmation' => $this->request->getPost('password_confirmation')
+        ];
+        // dd($user);
+        $model->where('user_id', session('user')->user_id);
+        $model->set($data);
+        if (!$model->update())
+            // dd($model->errors());
+            return redirect()->back()->with('danger', 'Konfirmasi password tidak sama')->with('errors', $model->errors());
+
+        return redirect()->back()->with('success', 'Password berhasil diubah');
     }
 }

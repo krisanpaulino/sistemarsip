@@ -91,11 +91,25 @@ class Arsip extends BaseController
         } else {
             $model->where('arsip_id', $id);
             $model->delete();
-            return redirect()->to('arsip')->with('danger', 'Gagal! Terjadi kesalahan saat mengupload file!');
+            return redirect()->to(user()->user_tipe . '/arsip')->with('danger', 'Gagal! Terjadi kesalahan saat mengupload file!');
         }
         return redirect()->to(user()->user_tipe . '/arsip')->with('success', 'Data arsip berhasil disimpan!');
     }
 
+    function delete()
+    {
+        $id = $this->request->getPost('id');
+        $model = new ArsipModel();
+        //cek akses ke file.
+        $arsip = $model->where('arsip_id', $id)->where('unit_id', user()->unit_id)->countAllResults();
+        if ($arsip <= 0) {
+            return redirect()->to('arsip')->with('danger', 'Anda tidak punya hak akses untuk file ini!');
+        }
+        $model->where('arsip_id', $id);
+        $model->set('deleted', '1');
+        $model->update();
+        return redirect()->to(user()->user_tipe . '/arsip')->with('success', 'Data arsip berhasil dihapus!');
+    }
     function download()
     {
         $id = $this->request->getPost('id');
@@ -174,12 +188,12 @@ class Arsip extends BaseController
 
         if ($pinjam = $pinjamModel->cekPinjam($unit_id, $arsip_id) == false) {
             // dd($pinjam);
-            return redirect()->to(session('user')->user_tipe . '/arsip')->with('danger', 'Anda tidak memiliki akses untuk file ini');
+            return redirect()->to(session('user')->user_tipe . '/pinjam')->with('danger', 'Anda tidak memiliki akses untuk file ini');
             exit;
         }
         $arsip = $arsipModel->find($arsip_id);
         if ($arsip == null)
-            return redirect()->to(session('user')->user_tipe . '/arsip')->with('danger', 'Data arsip tidak ditemukan!');
+            return redirect()->to(session('user')->user_tipe . '/pinjam')->with('danger', 'Data arsip tidak ditemukan!');
         // dd($arsip);
         $file = new File(WRITEPATH . 'uploads\\' . $arsip->arsip_file, true);
         if (!$file)
