@@ -10,7 +10,7 @@
     <div class="col-md-12">
         <div class="widget">
             <header class="widget-header">
-                <h4 class="widget-title">Form Jenis</h4>
+                <h4 class="widget-title">Form Arsip</h4>
             </header><!-- .widget-header -->
             <hr class="widget-separator">
             <div class="widget-body">

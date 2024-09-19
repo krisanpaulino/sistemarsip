@@ -48,7 +48,7 @@
                                         <td><?= $row->unit_asal ?></td>
                                         <?php if (user()->user_tipe == 'admin') ?>
                                         <td><?= $row->unit_nama ?></td>
-                                        <td><?= $row->pinjam_sampai ?></td>
+                                        <td><?= $row->pinjam_sampai ?> </td>
 
                                         <td>
                                             <?php if ($row->pinjam_approved != '1') : ?>
@@ -59,7 +59,7 @@
                                                 <?php endif; ?>
 
                                             <?php else : ?>
-                                                <?php if (user()->user_tipe == 'operator' && strtotime($row->pinjam_sampai >= strtotime(date('Y-m-d'))) && $row->pinjam_approved == 1) : ?>
+                                                <?php if (user()->user_tipe == 'operator' && strtotime($row->pinjam_sampai) >= strtotime(date('Y-m-d')) && $row->pinjam_approved == 1) : ?>
                                                     <form action="<?= base_url(user()->user_tipe . '/arsip/download') ?>" method="post">
                                                         <?= csrf_field() ?>
                                                         <input type="hidden" name="id" value="<?= $row->arsip_id ?>" class="d-flex d-none">
