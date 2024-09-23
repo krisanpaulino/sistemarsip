@@ -43,7 +43,16 @@ class Filters extends BaseConfig
     public array $globals = [
         'before' => [
             // 'honeypot',
-            'csrf',
+            'csrf' => [
+                'except' => [
+                    'admin/laporan/cetakharian',
+                    'operator/laporan/cetakharian',
+                    'admin/laporan/cetakbulanan',
+                    'operator/laporan/cetakbulanan',
+                    'admin/laporan/cetaktahunan',
+                    'operator/laporan/cetaktahunan'
+                ]
+            ],
             // 'invalidchars',
             // 'access'
         ],

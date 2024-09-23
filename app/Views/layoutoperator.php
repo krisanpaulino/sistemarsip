@@ -121,6 +121,18 @@
                             <span class="menu-text">Pinjam Arsip</span>
                         </a>
                     </li>
+                    <li class="has-submenu">
+                        <a href="javascript:void(0)" class="submenu-toggle">
+                            <i class="menu-icon glyphicon glyphicon-filter"></i>
+                            <span class="menu-text">Laporan Arsip</span>
+                            <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="<?= base_url('admin/laporan/harian') ?>"><span class="menu-text">Harian</span></a></li>
+                            <li><a href="<?= base_url('admin/laporan/bulanan') ?>"><span class="menu-text">Bulanan</span></a></li>
+                            <li><a href="<?= base_url('admin/laporan/tahunan') ?>"><span class="menu-text">Tahunan</span></a></li>
+                        </ul>
+                    </li>
                 </ul><!-- .app-menu -->
             </div><!-- .menubar-scroll-inner -->
         </div><!-- .menubar-scroll -->

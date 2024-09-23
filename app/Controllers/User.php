@@ -85,4 +85,16 @@ class User extends BaseController
 
         return redirect()->back()->with('success', 'Password berhasil diubah');
     }
+
+    function delete()
+    {
+        $id = $this->request->getPost('id');
+        $model = new UserModel();
+        $model->where('user_id', $id);
+        $model->set('user_aktif', 0);
+        if (!$model->update()) {
+            return redirect()->back()->with('danger', 'Terjadi kesalahan');
+        }
+        return redirect()->back()->with('success', 'Berhasil menonaktifkan user!');
+    }
 }

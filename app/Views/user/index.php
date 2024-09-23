@@ -45,8 +45,10 @@
                                     <td><?= $row->unit_nama ?></td>
 
                                     <td>
-                                        <form action="<?= base_url('admin') ?>" method="post">
+                                        <form action="<?= base_url('admin/user/delete') ?>" method="post">
+                                            <input type="hidden" name="id" value="<?= $row->user_id ?>" class="d-none">
                                             <?= csrf_field() ?>
+                                            <button type="submit" class="badge bg-danger border">Nonaktifkan</button>
                                         </form>
                                     </td>
                                 </tr>

@@ -16,6 +16,7 @@ $routes->group('admin', ['filter' => 'admin'], function ($routes) {
     $routes->get('user', 'User::index');
     $routes->get('user/signup', 'User::signup');
     $routes->post('user/register', 'User::register');
+    $routes->post('user/delete', 'User::delete');
     $routes->get('user/signup', 'User::signup');
 
     $routes->get('master/unit', 'Master::unit');
@@ -33,6 +34,16 @@ $routes->group('admin', ['filter' => 'admin'], function ($routes) {
     $routes->get('pinjam/request', 'Arsip::requestPinjam');
     $routes->get('pinjam/riwayat', 'Arsip::riwayatPinjam');
     $routes->post('pinjam/respon', 'Arsip::respondPinjam');
+
+    $routes->get('laporan/harian', 'Laporan::harian');
+    $routes->post('laporan/harian', 'Laporan::harian');
+    $routes->get('laporan/tahunan', 'Laporan::tahunan');
+    $routes->post('laporan/tahunan', 'Laporan::tahunan');
+    $routes->get('laporan/bulanan', 'Laporan::bulanan');
+    $routes->post('laporan/bulanan', 'Laporan::bulanan');
+    $routes->post('laporan/cetakharian', 'Laporan::cetakharian');
+    $routes->post('laporan/cetakbulanan', 'Laporan::cetakbulanan');
+    $routes->post('laporan/cetaktahunan', 'Laporan::cetaktahunan');
 });
 $routes->group('operator', ['filter' => 'operator'], function ($routes) {
     $routes->get('arsip', 'Arsip::index');
@@ -44,4 +55,14 @@ $routes->group('operator', ['filter' => 'operator'], function ($routes) {
     $routes->get('pinjam', 'Arsip::pinjamIndex');
     $routes->post('pinjam', 'Arsip::pinjam');
     $routes->get('pinjam/pinjam', 'Arsip::pinjamForm');
+
+    $routes->get('laporan/harian', 'Laporan::harian');
+    $routes->post('laporan/harian', 'Laporan::harian');
+    $routes->get('laporan/tahunan', 'Laporan::tahunan');
+    $routes->post('laporan/tahunan', 'Laporan::tahunan');
+    $routes->get('laporan/bulanan', 'Laporan::bulanan');
+    $routes->post('laporan/bulanan', 'Laporan::bulanan');
+    $routes->post('laporan/cetakharian', 'Laporan::cetakharian');
+    $routes->post('laporan/cetakbulanan', 'Laporan::cetakbulanan');
+    $routes->post('laporan/cetaktahunan', 'Laporan::cetaktahunan');
 });

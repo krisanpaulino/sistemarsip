@@ -83,4 +83,36 @@ class ArsipModel extends Model
         $this->where('arsip.deleted', '0');
         return $this->find();
     }
+
+    function laporanHarian($tanggal)
+    {
+        $this->where('arsip_tanggalrekam', $tanggal);
+        if (user()->user_tipe == 'operator')
+            $this->where('arsip.unit_id', user()->unit_id);
+        $this->join('jenis', 'jenis.jenis_id = arsip.jenis_id');
+        $this->join('unit', 'unit.unit_id = arsip.unit_id');
+        $result = $this->find();
+        return $result;
+    }
+    function laporanBulanan($bulan, $tahun)
+    {
+        $this->where('MONTH(arsip_tanggalrekam)', $bulan, false);
+        $this->where('YEAR(arsip_tanggalrekam)', $tahun, false);
+        if (user()->user_tipe == 'operator')
+            $this->where('arsip.unit_id', user()->unit_id);
+        $this->join('jenis', 'jenis.jenis_id = arsip.jenis_id');
+        $this->join('unit', 'unit.unit_id = arsip.unit_id');
+        $result = $this->find();
+        return $result;
+    }
+    function laporanTahunan($tahun)
+    {
+        $this->where('YEAR(arsip_tanggalrekam)', $tahun, false);
+        if (user()->user_tipe == 'operator')
+            $this->where('arsip.unit_id', user()->unit_id);
+        $this->join('jenis', 'jenis.jenis_id = arsip.jenis_id');
+        $this->join('unit', 'unit.unit_id = arsip.unit_id');
+        $result = $this->find();
+        return $result;
+    }
 }
