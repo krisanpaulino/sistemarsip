@@ -43,7 +43,8 @@ class User extends BaseController
                 'operator_nama' => $data['operator_nama'],
                 'unit_id' => $data['unit_id'],
                 'user_id' => $id,
-                'operator_aktif' => '1'
+                'operator_aktif' => '1',
+                'operator_nip' => $data['operator_nip']
             ];
             $opModel = new OperatorModel();
             if (!$opModel->insert($operator)) {

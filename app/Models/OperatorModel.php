@@ -18,6 +18,7 @@ class OperatorModel extends Model
         'unit_id',
         'operator_aktif',
         'user_id',
+        'operator_nip'
     ];
 
     // Dates

@@ -29,7 +29,7 @@
                                 <th>#</th>
                                 <th>Username</th>
                                 <th>Tipe</th>
-                                <th>Nama (Operator)</th>
+                                <th>Nama (Pegawai)</th>
                                 <th>Unit</th>
                                 <th>Action</th>
                             </tr>
@@ -40,7 +40,7 @@
                                 <tr>
                                     <td><?= $i++ ?></td>
                                     <td><?= $row->username ?></td>
-                                    <td><?= $row->user_tipe ?></td>
+                                    <td><?= ($row->user_tipe == 'operator') ? 'pegawai' : $row->user_tipe ?></td>
                                     <td><?= $row->operator_nama ?></td>
                                     <td><?= $row->unit_nama ?></td>
 

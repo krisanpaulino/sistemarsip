@@ -20,7 +20,7 @@
                         <select class="form-control <?= (isset(session('errors')['user_tipe'])) ? 'is-invalid' : '' ?>" id="user_tipe" name="user_tipe">
                             <option value="">Pilih Tipe User</option>
                             <option value="admin">Admin</option>
-                            <option value="operator">Operator</option>
+                            <option value="operator">Pegawai</option>
                         </select>
                         <div class="invalid-feedback">
                             <?php if (isset(session('errors')['user_tipe'])) : ?>
@@ -77,6 +77,12 @@
             $("<input type='text' value='' />")
                 // .attr("id", "")
                 .attr("name", "operator_nama")
+                .attr("class", "form-control")
+                .attr("style", "margin-bottom: 20px")
+                .appendTo("#op-form");
+            $("<input type='text' value='' />")
+                // .attr("id", "")
+                .attr("name", "operator_nip")
                 .attr("class", "form-control")
                 .attr("style", "margin-bottom: 20px")
                 .appendTo("#op-form");
