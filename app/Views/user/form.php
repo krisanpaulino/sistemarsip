@@ -72,7 +72,7 @@
         console.log(tipe);
         if (tipe == 'operator') {
 
-            $("<label>Nama Operator<label/>")
+            $("<label>Nama Pegawai<label/>")
                 .appendTo("#op-form");
             $("<input type='text' value='' />")
                 // .attr("id", "")
@@ -80,6 +80,7 @@
                 .attr("class", "form-control")
                 .attr("style", "margin-bottom: 20px")
                 .appendTo("#op-form");
+            $("<label>NIP Pegawai<label/>")
             $("<input type='text' value='' />")
                 // .attr("id", "")
                 .attr("name", "operator_nip")
