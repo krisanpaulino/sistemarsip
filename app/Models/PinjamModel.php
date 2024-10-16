@@ -110,13 +110,20 @@ class PinjamModel extends Model
         return $result;
     }
 
-    function getCount($days = null)
+    function getCount($days = null, $unit_pinjam = null, $unit_asal = null)
     {
+        $this->join('arsip asal', 'asal.arsip_id = pinjam.arsip_id');
         if ($days != null) {
             $currdate = date('Y-m-d');
             $from_date = date('Y-m-d', strtotime($currdate . ' - ' . $days . ' day'));
             $this->where('pinjam_waktu <=', $currdate, true);
             $this->where('pinjam_waktu >=', $from_date, true);
+        }
+        if ($unit_pinjam != null) {
+            $this->where('pinjam.unit_id', $unit_pinjam);
+        }
+        if ($unit_pinjam != null) {
+            $this->where('asal.unit_id', $unit_asal);
         }
         // dd($this->builder()->getCompiledSelect());
         return $this->countAllResults();

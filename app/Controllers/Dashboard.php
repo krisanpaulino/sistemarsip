@@ -22,7 +22,11 @@ class Dashboard extends BaseController
             $data['pinjam_365'] = $pinjamModel->getCount(365);
             $data['pinjam_all'] = $pinjamModel->getCount();
             return view('dashboard_admin', $data);
-        } else
+        } else {
+            $data['total_arsip'] = $arsipModel->where('deleted', '0')->where('unit_id', user()->unit_id)->countAllResults();
+            $data['pinjam'] = $pinjamModel->getCount(null, user()->unit_id);
+            $data['dipinjam'] = $pinjamModel->getCount(null, null, user()->unit_id);
             return view('dashboard_operator', $data);
+        }
     }
 }
