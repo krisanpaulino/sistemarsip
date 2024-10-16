@@ -1,5 +1,5 @@
 <?= $this->extend('layout' . user()->user_tipe); ?>
-<?= $this->section('content'); ?>
+<?= $this->section('main'); ?>
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -21,11 +21,54 @@
             <?php if (session()->has('danger')) : ?>
             <?php endif; ?>
 
-            <div class="card shadow border-left-primary mb-12">
-                <div class="card-body">
+        </div>
+    </div>
+    <div class="row">
 
+        <div class="col-md-3 col-sm-6">
+            <div class="widget stats-widget">
+                <div class="widget-body clearfix">
+                    <div class="pull-left">
+                        <h3 class="widget-title text-primary"><span class="counter" data-plugin="counterUp"><?= $total_arsip ?></span></h3>
+                        <small class="text-color">Total Arsip Terekam</small>
+                    </div>
+                    <span class="pull-right big-icon watermark"><i class="fa fa-paperclip"></i></span>
                 </div>
-            </div>
+            </div><!-- .widget -->
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="widget stats-widget">
+                <div class="widget-body clearfix">
+                    <div class="pull-left">
+                        <h3 class="widget-title text-warning"><span class="counter" data-plugin="counterUp"><?= $pinjam_30 ?></span></h3>
+                        <small class="text-color">Total Pinjam 30 Hari Terakhir</small>
+                    </div>
+                    <span class="pull-right big-icon watermark"><i class="fa fa-file-text-o"></i></span>
+                </div>
+            </div><!-- .widget -->
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="widget stats-widget">
+                <div class="widget-body clearfix">
+                    <div class="pull-left">
+                        <h3 class="widget-title text-success"><span class="counter" data-plugin="counterUp"><?= $pinjam_365 ?></span></h3>
+                        <small class="text-color">Total Pinjam 1 Tahun Terakhir</small>
+                    </div>
+                    <span class="pull-right big-icon watermark"><i class="fa fa-file-text-o"></i></span>
+                </div>
+            </div><!-- .widget -->
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="widget stats-widget">
+                <div class="widget-body clearfix">
+                    <div class="pull-left">
+                        <h3 class="widget-title text-danger"><span class="counter" data-plugin="counterUp"><?= $pinjam_365 ?></span></h3>
+                        <small class="text-color">Total Pinjam 1 Sepanjang Masa</small>
+                    </div>
+                    <span class="pull-right big-icon watermark"><i class="fa fa-file-text-o"></i></span>
+                </div>
+            </div><!-- .widget -->
         </div>
     </div>
 

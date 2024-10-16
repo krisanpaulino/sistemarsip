@@ -109,4 +109,16 @@ class PinjamModel extends Model
         $result = $this->find();
         return $result;
     }
+
+    function getCount($days = null)
+    {
+        if ($days != null) {
+            $currdate = date('Y-m-d');
+            $from_date = date('Y-m-d', strtotime($currdate . ' - ' . $days . ' day'));
+            $this->where('pinjam_waktu <=', $currdate, true);
+            $this->where('pinjam_waktu >=', $from_date, true);
+        }
+        // dd($this->builder()->getCompiledSelect());
+        return $this->countAllResults();
+    }
 }
