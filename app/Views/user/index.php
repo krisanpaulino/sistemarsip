@@ -56,7 +56,6 @@
                         </tbody>
                     </table>
                 </div>
-                <button type="submit" class="btn btn-primary btn-md">Simpan</button>
             </div><!-- .widget-body -->
         </div><!-- .widget -->
     </div>

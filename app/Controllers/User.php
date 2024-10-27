@@ -90,9 +90,11 @@ class User extends BaseController
     function delete()
     {
         $id = $this->request->getPost('id');
+        if ($id == user()->user_id)
+            return redirect()->back()->with('danger', 'Terjadi kesalahan : Anda tidak dapat menghapus data admin sendiri');
         $model = new UserModel();
         $model->where('user_id', $id);
-        $model->set('user_aktif', 0);
+        $model->set('user_aktif', '0');
         if (!$model->update()) {
             return redirect()->back()->with('danger', 'Terjadi kesalahan');
         }
