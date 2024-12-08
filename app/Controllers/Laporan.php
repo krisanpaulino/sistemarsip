@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\ArsipModel;
 use Dompdf\Dompdf;
+use Dompdf\Options;
 
 // use App\Models\PinjamModel;
 
@@ -41,7 +42,10 @@ class Laporan extends BaseController
         $filename = $tanggal . '-laproran-upload';
 
         // instantiate and use the dompdf class
+        $options = new Options();
+        $options->set('isRemoteEnabled', TRUE);
         $dompdf = new Dompdf();
+        $dompdf->setOptions($options);
 
         // load HTML content
         $dompdf->loadHtml(view('laporan_harianpdf', $data));
@@ -86,9 +90,12 @@ class Laporan extends BaseController
             'tanggal' => $tanggal
         ];
         $filename = $tanggal . '-laproran-upload';
-
+        // return view('laporan_bulananpdf', $data);
         // instantiate and use the dompdf class
+        $options = new Options();
+        $options->set('isRemoteEnabled', TRUE);
         $dompdf = new Dompdf();
+        $dompdf->setOptions($options);
 
         // load HTML content
         $dompdf->loadHtml(view('laporan_bulananpdf', $data));
@@ -131,7 +138,10 @@ class Laporan extends BaseController
         $filename = $tahun . '-laproran-upload';
 
         // instantiate and use the dompdf class
+        $options = new Options();
+        $options->set('isRemoteEnabled', TRUE);
         $dompdf = new Dompdf();
+        $dompdf->setOptions($options);
 
         // load HTML content
         $dompdf->loadHtml(view('laporan_tahunanpdf', $data));

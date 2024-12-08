@@ -25,7 +25,7 @@
     <div class="simple-page-wrap">
         <div class="simple-page-logo animated swing">
             <a href="index.html">
-                <span><i class="fa fa-gg"></i></span>
+                <span><img src="<?= base_url('assets/images/logo_big.png') ?>" alt=""></span>
                 <span>Sistem Arsip BKD</span>
             </a>
         </div><!-- logo -->

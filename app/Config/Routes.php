@@ -5,7 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Dashboard::index', ['filter' => 'login']);
+$routes->get('/', 'Home::index');
 $routes->get('dashboard', 'Dashboard::index', ['filter' => 'login']);
 $routes->get('ganti-password', 'User::gantiPassword', ['filter' => 'login']);
 $routes->post('ganti-password', 'User::updatePassword', ['filter' => 'login']);
@@ -44,6 +44,12 @@ $routes->group('admin', ['filter' => 'admin'], function ($routes) {
     $routes->post('laporan/cetakharian', 'Laporan::cetakharian');
     $routes->post('laporan/cetakbulanan', 'Laporan::cetakbulanan');
     $routes->post('laporan/cetaktahunan', 'Laporan::cetaktahunan');
+
+    $routes->get('informasi', 'Informasi::index');
+    $routes->get('informasi/(:num)', 'Informasi::edit/$1');
+    $routes->get('informasi/tambah', 'Informasi::create');
+    $routes->post('informasi/save', 'Informasi::save');
+    $routes->post('informasi/delete', 'Informasi::delete');
 });
 $routes->group('operator', ['filter' => 'operator'], function ($routes) {
     $routes->get('arsip', 'Arsip::index');

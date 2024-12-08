@@ -37,7 +37,7 @@
         <div class="navbar-header">
 
             <a href="<?= base_url('dashboard') ?>" class="navbar-brand">
-                <span class="brand-icon"><i class="fa fa-gg"></i></span>
+                <span class="brand-icon"><img class="img-responsive" src="<?= base_url('assets/images/logo_big.png') ?>" alt=""></span>
                 <span class="brand-name">Sistem Arsip BKD</span>
             </a>
         </div><!-- .navbar-header -->
@@ -158,6 +158,15 @@
                             <li><a href="<?= base_url('admin/laporan/bulanan') ?>"><span class="menu-text">Bulanan</span></a></li>
                             <li><a href="<?= base_url('admin/laporan/tahunan') ?>"><span class="menu-text">Tahunan</span></a></li>
                         </ul>
+                    </li>
+                    <li class="menu-separator">
+                        <hr>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('admin/informasi') ?>">
+                            <i class="menu-icon fa fa-Example fa-newspaper-o"></i>
+                            <span class="menu-text">Informasi</span>
+                        </a>
                     </li>
                 </ul><!-- .app-menu -->
             </div><!-- .menubar-scroll-inner -->

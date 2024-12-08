@@ -16,7 +16,7 @@
             <div class="widget-body">
                 <div class="m-b-lg">
                     <small>
-                        Pinjam arsip form di bawah ini!
+                        Izin arsip melalui form di bawah ini!
                     </small>
                 </div>
                 <div class="table-responsive mt-2">
@@ -44,7 +44,7 @@
                                     <td><?= $row->unit_nama ?></td>
 
                                     <td>
-                                        <button type="button" data-toggle="modal" data-target="#pinjam<?= $row->arsip_id ?>" class="btn btn-warning btn-xs">Pinjam</button>
+                                        <button type="button" data-toggle="modal" data-target="#pinjam<?= $row->arsip_id ?>" class="btn btn-warning btn-xs">Minta akses</button>
                                         <div class="modal fade in" id="pinjam<?= $row->arsip_id ?>" tabindex="-1" role="dialog">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -70,7 +70,7 @@
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="submit" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                                            <button type="submit" class="btn btn-primary">Pinjam</button>
+                                                            <button type="submit" class="btn btn-primary">Minta Izin Akses</button>
                                                         </div>
                                                     </form>
                                                 </div>

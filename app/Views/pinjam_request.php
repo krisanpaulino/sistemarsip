@@ -10,7 +10,7 @@
     <div class="col-md-12">
         <div class="widget">
             <header class="widget-header">
-                <h4 class="widget-title">Permintaan Pinjam Arsip</h4>
+                <h4 class="widget-title">Permintaan Izin Arsip</h4>
             </header><!-- .widget-header -->
             <hr class="widget-separator">
             <div class="widget-body">
@@ -29,7 +29,7 @@
                                 <th>Perihal Arsip</th>
                                 <th>Tanggal Arsip</th>
                                 <th>Unit Asal Arsip</th>
-                                <th>Unit Peminjam</th>
+                                <th>Unit Pemohon</th>
                                 <th>Keterangan</th>
                                 <th>Action</th>
                             </tr>

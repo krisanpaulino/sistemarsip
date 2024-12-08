@@ -31,8 +31,8 @@
                                     <th>Tanggal Arsip</th>
                                     <th>Unit Asal Arsip</th>
                                     <?php if (user()->user_tipe == 'admin') ?>
-                                    <th>Unit Peminjam</th>
-                                    <th>Pinjam Sampai</th>
+                                    <th>Unit Pemohon</th>
+                                    <th>Izin Sampai</th>
                                     <th>Action/Status</th>
                                 </tr>
                             </thead>

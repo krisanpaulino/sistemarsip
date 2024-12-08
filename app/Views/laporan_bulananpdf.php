@@ -7,124 +7,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title ?></title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            background-color: #f4f7fa;
+            line-height: 1.2;
+            /* Reduced line spacing */
+            font-size: 12px;
+            /* Reduced font size */
             color: #333;
+            background-color: #fff;
+            margin: 10px;
+            /* Reduced margin for content area */
         }
 
         .container {
-            max-width: 1100px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            width: 100%;
+            margin: auto;
+            padding: 10px;
+            /* Reduced padding */
+            box-sizing: border-box;
         }
 
         header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            /* Reduced space below header */
         }
 
-        header h1 {
-            font-size: 2.5em;
+        .company-info {
+            width: 100%;
+            margin-bottom: 10px;
+            /* Reduced margin below company info */
+            border-collapse: collapse;
+            /* Ensures a clean layout */
+        }
+
+        .company-info td {
+            vertical-align: middle;
+            padding: 3px;
+            /* Reduced padding for compactness */
+            border: none;
+            /* Removed all borders */
+        }
+
+        .logo {
+            width: 40px;
+            /* Smaller logo */
+            height: 40px;
+        }
+
+        .company-name {
+            font-size: 1.2em;
+            /* Slightly smaller font for the company name */
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        .company-details {
+            font-size: 10px;
+            /* Reduced font size for details */
+            color: #555;
+        }
+
+        .separator {
+            border-top: 1px solid #d3d3d3;
+            /* Reduced thickness of the separator */
+            margin: 10px 0;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            /* Reduced font size */
             color: #2c3e50;
         }
 
         .report-date {
             color: #7f8c8d;
-            margin-top: 5px;
-            font-size: 1em;
-        }
-
-        .summary {
-            margin-bottom: 30px;
-        }
-
-        .summary h2 {
-            font-size: 1.8em;
-            color: #34495e;
-            margin-bottom: 10px;
-        }
-
-        .summary p {
-            font-size: 1.1em;
-            line-height: 1.5;
-            color: #555;
-        }
-
-        .report-table h2 {
-            font-size: 1.8em;
-            color: #34495e;
-            margin-bottom: 15px;
+            font-size: 10px;
+            /* Reduced font size for date */
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            /* Reduced space below table */
+            font-size: 10px;
+            /* Smaller font for table content */
         }
 
         table th,
         table td {
             text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
+            padding: 6px;
+            /* Reduced padding for tighter spacing */
+            border: 1px solid #ddd;
         }
 
         table th {
             background-color: #34495e;
             color: white;
-            font-weight: bold;
         }
 
         table tbody tr:nth-child(even) {
             background-color: #f2f2f2;
-        }
-
-        table tbody tr:hover {
-            background-color: #d3d3d3;
-            cursor: pointer;
-        }
-
-        table td {
-            color: #555;
-        }
-
-        table td:first-child {
-            font-weight: bold;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 0 15px;
-            }
-
-            .container {
-                padding: 10px;
-            }
-
-            table th,
-            table td {
-                font-size: 14px;
-                padding: 10px;
-            }
-
-            header h1 {
-                font-size: 2em;
-            }
-
-            .report-date {
-                font-size: 0.9em;
-            }
         }
     </style>
 </head>
@@ -132,14 +117,27 @@
 <body>
     <div class="container">
         <header>
+            <table class="company-info">
+                <tr>
+                    <td><img src="<?= base_url('assets/images/logo_big.png') ?>" alt="Company Logo" class="logo"></td>
+                    <td>
+                        <div>
+                            <p class="company-name">BKD Kabupaten Sikka</p>
+                            <p class="company-details">Uneng City, Alok, Sikka Regency, East Nusa Tenggara</p>
+                            <p class="company-details">Phone: 0382-23025</p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="separator"></div>
             <h1><?= $title ?></h1>
             <p class="report-date"><?= $tanggal ?></p>
         </header>
 
-        <!-- <section class="summary">
-            <h2>Summary</h2>
-            <p>This report provides an overview of the monthly sales performance, detailing key metrics and highlights.</p>
-        </section> -->
+        <section class="summary">
+            <h5>Tanggal Cetak</h5>
+            <p><?= date('d-m-Y') ?></p>
+        </section>
 
         <section class="report-table">
             <h2>Data Arsip</h2>
