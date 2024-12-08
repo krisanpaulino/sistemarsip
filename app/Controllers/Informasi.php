@@ -50,16 +50,20 @@ class Informasi extends BaseController
         if ($informasi_id == null) {
             if (!$informasi_id = $model->insert($data, true))
                 return redirect()->back()->with('danger', 'Terjadi kesalahan saat menyimpan data')->withInput()->with('errors', $model->errors());
+            $data['informasi_id'] = $informasi_id;
         }
 
         //Handling file uploaded
-        if ($file != null) {
+        if ($file != null && $file->isValid()) {
             $path = './assets/files';
             $filename = 'file_' . $informasi_id . '.' . $file->getExtension();
-            if (!$file->move($path, $filename, true))
+            if (!$file->move($path, $filename, true)) {
+                $model->where('informasi_id', $informasi_id)->delete();
                 return redirect()->back()->with('danger', 'Kesalahan saat upload file')->withInput();
+            }
             $data['informasi_dokumen'] = $filename;
         }
+        // dd($data);
 
         if (!$model->save($data))
             return redirect()->back()->with('danger', 'Terjadi kesalahan saat menyimpan data')->withInput()->with('errors', $model->errors());
@@ -67,7 +71,7 @@ class Informasi extends BaseController
     }
     function delete()
     {
-        $informasi_id = $this->request->getPost('informasi_id');
+        $informasi_id = $this->request->getPost('id');
         $model = new InformasiModel();
         if (!$model->where('informasi_id', $informasi_id)->delete())
             return redirect()->back()->with('danger', 'Gagal menghapus data')->withInput()->with('errors', $model->errors());
