@@ -143,8 +143,8 @@
                             <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
                         </a>
                         <ul class="submenu">
-                            <li><a href="<?= base_url('admin/pinjam/request') ?>"><span class="menu-text">Request Pinjam</span></a></li>
-                            <li><a href="<?= base_url('admin/pinjam/riwayat') ?>"><span class="menu-text">Riwayat Pinjam Arsip</span></a></li>
+                            <li><a href="<?= base_url('admin/pinjam/request') ?>"><span class="menu-text">Request Izin</span></a></li>
+                            <li><a href="<?= base_url('admin/pinjam/riwayat') ?>"><span class="menu-text">Riwayat Izin Arsip</span></a></li>
                         </ul>
                     </li>
                     <li class="has-submenu">

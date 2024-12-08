@@ -118,7 +118,7 @@
                     <li>
                         <a href="<?= base_url('operator/pinjam') ?>">
                             <i class="menu-icon fa fa-Example fa-folder-open"></i>
-                            <span class="menu-text">Pinjam Arsip</span>
+                            <span class="menu-text">Izin Akses Arsip</span>
                         </a>
                     </li>
                     <li class="has-submenu">
