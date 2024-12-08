@@ -67,8 +67,8 @@
 				<span class="zmdi zmdi-hc-lg zmdi-search"></span>
 			</button>
 
-			<a href="../index.html" class="navbar-brand">
-				<span class="brand-icon"><i class="fa fa-gg"></i></span>
+			<a href="<?= base_url('') ?>" class="navbar-brand">
+				<span class="brand-icon"><img class="img-responsive" src="<?= base_url('assets/images/logo_big.png') ?>" alt=""></span>
 				<span class="brand-name">BKD Kabupaten Sikka</span>
 			</a>
 		</div><!-- .navbar-header -->
@@ -85,8 +85,8 @@
 
 				<ul class="nav navbar-toolbar navbar-toolbar-right navbar-right">
 					<li class="nav-item dropdown hidden-float">
-						<a href="javascript:void(0)" data-toggle="collapse" data-target="#navbar-search" aria-expanded="false">
-							<i class="zmdi zmdi-hc-lg zmdi-search"></i>
+						<a href="<?= base_url('dashboard') ?>">
+							<i class="fa fa-user"></i>
 						</a>
 					</li>
 
@@ -100,18 +100,6 @@
 	<!--========== END app aside -->
 
 	<!-- navbar search -->
-	<div id="navbar-search" class="navbar-search collapse">
-		<div class="navbar-search-inner">
-			<form action="#">
-				<span class="search-icon"><i class="fa fa-search"></i></span>
-				<input class="search-field" type="search" placeholder="search..." />
-			</form>
-			<button type="button" class="search-close" data-toggle="collapse" data-target="#navbar-search" aria-expanded="false">
-				<i class="fa fa-close"></i>
-			</button>
-		</div>
-		<div class="navbar-search-backdrop" data-toggle="collapse" data-target="#navbar-search" aria-expanded="false"></div>
-	</div><!-- .navbar-search -->
 
 	<!-- APP MAIN ==========-->
 	<main id="app-main" class="app-main">

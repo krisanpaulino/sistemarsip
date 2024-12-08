@@ -37,7 +37,7 @@
         <div class="navbar-header">
 
             <a href="<?= base_url('dashboard') ?>" class="navbar-brand">
-                <span class="brand-icon"><i class="fa fa-gg"></i></span>
+                <span class="brand-icon"><img class="img-responsive" src="<?= base_url('assets/images/logo_big.png') ?>" alt=""></span>
                 <span class="brand-name">Sistem Arsip BKD</span>
             </a>
         </div><!-- .navbar-header -->
