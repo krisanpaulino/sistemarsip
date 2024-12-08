@@ -139,11 +139,11 @@
                     <li class="has-submenu">
                         <a href="javascript:void(0)" class="submenu-toggle">
                             <i class="menu-icon fa fa-Example fa-folder-open"></i>
-                            <span class="menu-text">Peminjaman</span>
+                            <span class="menu-text">Perizinan Arsip</span>
                             <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
                         </a>
                         <ul class="submenu">
-                            <li><a href="<?= base_url('admin/pinjam/request') ?>"><span class="menu-text">Request Izin</span></a></li>
+                            <li><a href="<?= base_url('admin/pinjam/request') ?>"><span class="menu-text">Request Izin Arsip</span></a></li>
                             <li><a href="<?= base_url('admin/pinjam/riwayat') ?>"><span class="menu-text">Riwayat Izin Arsip</span></a></li>
                         </ul>
                     </li>
