@@ -14,8 +14,16 @@
                     <!-- <small>
                         Data Arsip
                     </small> -->
+
+
                     <div class="col-md-12">
-                        <div class="table-responsive mt-2">
+                        <div class="from-group">
+                            <a href="<?= base_url('admin/informasi/tambah') ?>" class="btn btn-primary mb-4">Tambah Informasi</a>
+
+                        </div>
+                        <br>
+                        <br>
+                        <div class="table-responsive mt-4">
                             <table id="default-datatable" data-plugin="DataTable" class="table table-striped" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
