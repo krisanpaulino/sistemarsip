@@ -101,9 +101,11 @@ class Arsip extends BaseController
         $id = $this->request->getPost('id');
         $model = new ArsipModel();
         //cek akses ke file.
-        $arsip = $model->where('arsip_id', $id)->where('unit_id', user()->unit_id)->countAllResults();
-        if ($arsip <= 0) {
-            return redirect()->to('arsip')->with('danger', 'Anda tidak punya hak akses untuk file ini!');
+        if (user()->user_tipe != 'admin') {
+            $arsip = $model->where('arsip_id', $id)->where('unit_id', user()->unit_id)->countAllResults();
+            if ($arsip <= 0) {
+                return redirect()->to(user()->user_tipe . '/arsip')->with('danger', 'Anda tidak punya hak akses untuk file ini!');
+            }
         }
         $model->where('arsip_id', $id);
         $model->set('deleted', '1');
