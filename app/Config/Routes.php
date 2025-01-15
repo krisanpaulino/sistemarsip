@@ -30,6 +30,8 @@ $routes->group('admin', ['filter' => 'admin'], function ($routes) {
     $routes->get('arsip', 'Arsip::index');
     $routes->get('arsip/tambah', 'Arsip::tambah');
     $routes->post('arsip/save', 'Arsip::save');
+    $routes->post('arsip/delete', 'Arsip::delete');
+    $routes->post('arsip/download', 'Arsip::download');
 
     $routes->get('pinjam/request', 'Arsip::requestPinjam');
     $routes->get('pinjam/riwayat', 'Arsip::riwayatPinjam');
