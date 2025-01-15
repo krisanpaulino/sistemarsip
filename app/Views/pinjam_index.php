@@ -60,7 +60,7 @@
 
                                             <?php else : ?>
                                                 <?php if (user()->user_tipe == 'operator' && strtotime($row->pinjam_sampai) >= strtotime(date('Y-m-d')) && $row->pinjam_approved == 1) : ?>
-                                                    <form action="<?= base_url(user()->user_tipe . '/arsip/download') ?>" method="post">
+                                                    <form action="<?= base_url(user()->user_tipe . '/pinjam/download') ?>" method="post">
                                                         <?= csrf_field() ?>
                                                         <input type="hidden" name="id" value="<?= $row->arsip_id ?>" class="d-flex d-none">
                                                         <button type="submit" class="btn btn-primary btn-xs">Download</button>

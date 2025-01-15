@@ -253,4 +253,34 @@ class Arsip extends BaseController
         ];
         return view('pinjam_index', $data);
     }
+    public function downloadUnit()
+    {
+        $unit_id = user()->unit_id;
+        $arsip_id = $this->request->getPost('id');
+        $model = new ArsipModel();
+
+        $arsip = $model->where('arsip_id', $arsip_id)->where('unit_id', user()->unit_id)->countAllResults();
+        if ($arsip <= 0) {
+            return redirect()->to(user()->user_tipe . '/arsip')->with('danger', 'Anda tidak punya hak akses untuk file ini!');
+        }
+        $arsip = $model->find($arsip_id);
+        if ($arsip == null)
+            return redirect()->to(session('user')->user_tipe . '/arsip')->with('danger', 'Data arsip tidak ditemukan!');
+        // dd($arsip);
+        $file = new File(WRITEPATH . 'uploads\\' . $arsip->arsip_file, true);
+        if (!$file)
+            return redirect()->back()->with('danger', 'File tidak ditemukan!');
+
+        $filePath = WRITEPATH . 'uploads/' . $arsip->arsip_file;
+
+        // Set the Content-Type header to application/octet-stream
+        header('Content-Type: application/octet-stream');
+
+        // Set the Content-Disposition header to the filename of the downloaded file
+        header('Content-Disposition: attachment; filename="' . $arsip->arsip_file . '"');
+
+        // Read the contents of the file and output it to the browser.
+        readfile($filePath);
+        // exit;
+    }
 }
