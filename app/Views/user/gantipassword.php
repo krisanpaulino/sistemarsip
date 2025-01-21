@@ -44,8 +44,8 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary btn-md">Ganti Password</button>
+                </form>
             </div>
-            </form>
         </div><!-- .widget-body -->
     </div><!-- .widget -->
 </div><!-- END column -->

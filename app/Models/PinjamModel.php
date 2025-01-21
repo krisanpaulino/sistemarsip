@@ -20,6 +20,7 @@ class PinjamModel extends Model
         'pinjam_approved',
         'pinjam_sampai',
         'pinjam_keterangan',
+        'operator_id',
     ];
 
     // Dates
@@ -37,6 +38,7 @@ class PinjamModel extends Model
         // 'pinjam_approved' => 'required',
         // 'pinjam_sampai' => 'required',
         'pinjam_keterangan' => 'required',
+        'operator_id' => 'required',
     ];
     protected $validationMessages   = [];
     protected $skipValidation       = false;
@@ -55,14 +57,16 @@ class PinjamModel extends Model
 
     function getPinjam($pinjam_id = null)
     {
-        $this->select('pinjam.*, arsip.*, jenis.*, unit.*, a.unit_id as unit_asal_id, a.unit_nama as unit_asal');
+        $this->select('pinjam.*, arsip.*, jenis.*, unit.*, a.unit_id as unit_asal_id, a.unit_nama as unit_asal, operator.operator_nama');
         $this->join('unit', 'unit.unit_id = pinjam.unit_id');
         $this->join('arsip', 'arsip.arsip_id = pinjam.arsip_id');
         $this->join('unit a', 'a.unit_id = arsip.unit_id');
         $this->join('jenis', 'arsip.jenis_id = jenis.jenis_id');
-        if (session('user')->user_tipe == 'operator')
+        $this->join('operator', 'operator.operator_id = pinjam.operator_id', 'left');
+        if (session('user')->user_tipe == 'operator') {
             $this->where('pinjam.unit_id', user()->unit_id);
-        else
+            $this->where('pinjam.operator_id', user()->operator_id);
+        } else
             $this->where('pinjam_approved != ', 'unchecked', true);
         if ($pinjam_id != null) {
             $this->where('pinjam_id', $pinjam_id);
@@ -76,16 +80,20 @@ class PinjamModel extends Model
         $this->where('pinjam.unit_id', $unit_id);
         $this->join('unit', 'unit.unit_id = pinjam.unit_id');
         $this->join('arsip', 'arsip.arsip_id = pinjam.arsip_id');
+        $this->join('operator', 'operator.operator_id = pinjam.operator_id', 'left');
         return $this->find();
     }
 
     function cekPinjam($unit_id, $arsip_id)
     {
         $this->join('arsip', 'arsip.arsip_id = pinjam.arsip_id and pinjam.arsip_id = ' . $arsip_id, 'right');
+        $this->join('operator', 'operator.operator_id = pinjam.operator_id', 'left');
         $this->where('pinjam.unit_id', $unit_id);
         // $this->where('pinjam.arsip_id', $arsip_id);
-        $this->where('pinjam_approved', '1');
-        $this->where('pinjam_sampai >=', date('Y-m-d'), true);
+        $this->groupStart();
+        $this->where('pinjam_approved', '1')
+            ->where('pinjam_sampai >=', date('Y-m-d'), true)->groupEnd();
+        $this->orWhere('pinjam.pinjam_approved', 'unchecked');
         // $this->orWhere('pinjam.unit_id', $unit_id);
         $result = $this->first();
         // dd($result);
@@ -100,13 +108,25 @@ class PinjamModel extends Model
         if (user()->user_tipe == 'operator') {
             $this->where(user()->user_tipe);
         }
-        $this->select('pinjam.*, arsip.*, jenis.*, unit.*, a.unit_id as unit_pinjam_id, a.unit_nama as unit_pinjam');
+        $this->select('pinjam.*, arsip.*, jenis.*, unit.*, a.unit_id as unit_pinjam_id, a.unit_nama as unit_pinjam, operator.operator_nama');
+        $this->join('operator', 'operator.operator_id = pinjam.operator_id', 'left');
         $this->join('unit', 'unit.unit_id = pinjam.unit_id');
         $this->join('arsip', 'arsip.arsip_id = pinjam.arsip_id');
         $this->join('unit a', 'a.unit_id = arsip.unit_id');
         $this->join('jenis', 'arsip.jenis_id = jenis.jenis_id');
         $this->where('pinjam.pinjam_approved', 'unchecked');
         $result = $this->find();
+        return $result;
+    }
+
+    function getCountRequest()
+    {
+        if (user()->user_tipe == 'operator') {
+            $this->where(user()->user_tipe);
+        }
+
+        $this->where('pinjam.pinjam_approved', 'unchecked');
+        $result = $this->countAllResults();
         return $result;
     }
 

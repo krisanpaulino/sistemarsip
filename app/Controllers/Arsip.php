@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\ArsipModel;
 use App\Models\JenisModel;
+use App\Models\NotifikasiModel;
 use App\Models\PinjamModel;
 use App\Models\UnitModel;
 use CodeIgniter\Files\File;
@@ -160,15 +161,19 @@ class Arsip extends BaseController
     function pinjam()
     {
         $unit_id = user()->unit_id;
+        $operator_id = user()->operator_id;
         $arsip_id = $this->request->getPost('id');
-        // $arsipModel = new ArsipModel();
         $pinjamModel = new PinjamModel();
 
-        if ($pinjamModel->cekPinjam($unit_id, $arsip_id) != false)
-            return redirect()->back()->with('danger', 'Anda masih memiliki akses untuk file ini ');
-
+        if ($res = $pinjamModel->cekPinjam($unit_id, $arsip_id)) {
+            if ($res->pinjam_approved != 'unchecked')
+                return redirect()->back()->with('danger', 'Arsip ini sedang dipinjam di unit anda oleh <b>' . $res->operator_nama . '</b> sampai tanggal ' . $res->pinjam_sampai . '. ');
+            else
+                return redirect()->back()->with('danger', 'Arsip ini sedang dalam proses request atas nama <b>' . $res->operator_nama . '</b>. Silahkan menunggu konfirmasi admin');
+        }
         $data = [
             'unit_id' => $unit_id,
+            'operator_id' => $operator_id,
             'arsip_id' => $arsip_id,
             'pinjam_waktu' => date('Y-m-d H:i:s'),
             'pinjam_keterangan' => htmlspecialchars($this->request->getPost('keterangan'))
@@ -177,6 +182,15 @@ class Arsip extends BaseController
         if (!$pinjamModel->insert($data))
             // dd($pinjamModel->errors());
             return redirect()->back()->with('danger', 'Periksa kembali data yang anda masukkan')->with('errors', $pinjamModel->errors());
+
+        //create notifikasi
+        $notifikasi = new NotifikasiModel();
+        $notif = [
+            'notifikasi_judul' => 'Permintaan Pinjam Arsip',
+            'notifikasi_isi' => 'Permintaan pinjam aplikasi dari unit ' . user()->unit_nama
+        ];
+        if (!$notifikasi->insert($notif))
+            dd($notifikasi->errors());
 
         return redirect()->to('operator/pinjam')->with('success', 'Peminjaman anda berhasil direkam. Silahkan menunggu admin melakukan konfirmasi peminjaman anda.');
     }

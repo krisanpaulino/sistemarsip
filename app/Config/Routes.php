@@ -12,6 +12,12 @@ $routes->post('ganti-password', 'User::updatePassword', ['filter' => 'login']);
 $routes->get('auth', 'Auth::index');
 $routes->post('logout', 'Auth::logout');
 $routes->post('dologin', 'Auth::login');
+
+//ajax
+$routes->get('notifikasi', 'Ajax::notifikasi', ['filter' => 'login']);
+$routes->get('notifikasi/read/(:num)', 'Ajax::read/$1', ['filter' => 'login']);
+$routes->get('unconfirmed', 'Ajax::newPinjam', ['filter' => 'login']);
+
 $routes->group('admin', ['filter' => 'admin'], function ($routes) {
     $routes->get('user', 'User::index');
     $routes->get('user/signup', 'User::signup');

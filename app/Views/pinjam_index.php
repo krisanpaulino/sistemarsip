@@ -30,8 +30,10 @@
                                     <th>Perihal Arsip</th>
                                     <th>Tanggal Arsip</th>
                                     <th>Unit Asal Arsip</th>
-                                    <?php if (user()->user_tipe == 'admin') ?>
-                                    <th>Unit Pemohon</th>
+                                    <?php if (user()->user_tipe == 'admin'): ?>
+                                        <th>Unit Pemohon</th>
+                                        <td>Nama Pegawai</td>
+                                    <?php endif ?>
                                     <th>Izin Sampai</th>
                                     <th>Action/Status</th>
                                 </tr>
@@ -46,8 +48,10 @@
                                         <td><?= $row->arsip_perihal ?></td>
                                         <td><?= $row->arsip_tanggalarsip ?></td>
                                         <td><?= $row->unit_asal ?></td>
-                                        <?php if (user()->user_tipe == 'admin') ?>
-                                        <td><?= $row->unit_nama ?></td>
+                                        <?php if (user()->user_tipe == 'admin'): ?>
+                                            <td><?= $row->unit_nama ?></td>
+                                            <td><?= $row->operator_nama ?></td>
+                                        <?php endif ?>
                                         <td><?= $row->pinjam_sampai ?> </td>
 
                                         <td>

@@ -30,6 +30,7 @@
                                 <th>Tanggal Arsip</th>
                                 <th>Unit Asal Arsip</th>
                                 <th>Unit Pemohon</th>
+                                <th>Nama Pegawai</th>
                                 <th>Keterangan</th>
                                 <th>Action</th>
                             </tr>
@@ -45,6 +46,7 @@
                                     <td><?= $row->arsip_perihal ?></td>
                                     <td><?= $row->unit_nama ?></td>
                                     <td><?= $row->unit_pinjam ?></td>
+                                    <td><?= $row->operator_nama ?></td>
                                     <td><?= $row->pinjam_keterangan ?></td>
 
                                     <td>

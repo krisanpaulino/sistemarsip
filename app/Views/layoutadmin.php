@@ -54,7 +54,6 @@
                         <h5 class="page-title hidden-menubar-top hidden-float"><?= $title ?></h5>
                     </li>
                 </ul>
-
             </div>
         </div><!-- navbar-container -->
     </nav>
@@ -140,10 +139,11 @@
                         <a href="javascript:void(0)" class="submenu-toggle">
                             <i class="menu-icon fa fa-Example fa-folder-open"></i>
                             <span class="menu-text">Perizinan Arsip</span>
+                            <span class="label label-danger menu-label" id="notif1"></span>
                             <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
                         </a>
                         <ul class="submenu">
-                            <li><a href="<?= base_url('admin/pinjam/request') ?>"><span class="menu-text">Request Izin Arsip</span></a></li>
+                            <li><a href="<?= base_url('admin/pinjam/request') ?>"><span class="menu-text">Request Izin Arsip</span><span class="label label-danger menu-label" id="notif2"></span></a></li>
                             <li><a href="<?= base_url('admin/pinjam/riwayat') ?>"><span class="menu-text">Riwayat Izin Arsip</span></a></li>
                         </ul>
                     </li>
@@ -256,6 +256,82 @@
     <script src="<?= base_url('assets/libs') ?>/bower/fullcalendar/dist/fullcalendar.min.js"></script>
     <script src="<?= base_url('assets') ?>/js/fullcalendar.js"></script>
     <?= $this->renderSection('scripts'); ?>
+    <script>
+        function doPoll() {
+            // Get the JSON
+
+            $.ajax({
+                url: '<?= base_url('notifikasi') ?>',
+                type: 'get',
+                success: function(data) {
+
+                    if (data != null) {
+                        // Yeah, there is a new notification! Show it to the user
+                        data.forEach(row => {
+                            const notification = new Notification(row.notifikasi_judul, {
+                                body: row.notifikasi_isi
+                            });
+                            notification.onclick = function() {
+                                window.open('<?= base_url('admin/pinjam/request') ?>');
+                            };
+                            read(row.notifikasi_id)
+                        });
+
+                    }
+                    // Retry after a second
+                    setTimeout(doPoll, 5000);
+                },
+                dataType: "json"
+            });
+        }
+
+        function getUnconfirmed() {
+            // Get the JSON
+
+            $.ajax({
+                url: '<?= base_url('unconfirmed') ?>',
+                type: 'get',
+                success: function(data) {
+                    if (data.count > 0) {
+                        $('#notif1').text(data.count);
+                        $('#notif2').text(data.count);
+                    } else {
+                        $('#notif1').text('');
+                        $('#notif2').text('');
+                    }
+                    // Retry after a second
+                    setTimeout(getUnconfirmed, 5000);
+                },
+                dataType: "json"
+            });
+        }
+
+        function read(id) {
+            // Get the JSON
+
+            $.ajax({
+                url: '<?= base_url('notifikasi/read/') ?>/' + id,
+                type: 'get',
+                success: function(data) {
+                    // Retry after a second
+                    // setTimeout(doPoll, 5000);
+                },
+                dataType: "json"
+            });
+        }
+        if (Notification.permission !== "granted") {
+            // Request permission to send browser notifications
+            Notification.requestPermission().then(function(result) {
+                if (result === 'default') {
+                    // Permission granted
+                    doPoll();
+                }
+            });
+        } else {
+            doPoll();
+        }
+        getUnconfirmed();
+    </script>
 
 </body>
 
