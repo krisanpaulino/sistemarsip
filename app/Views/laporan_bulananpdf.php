@@ -103,6 +103,14 @@
             border: 1px solid #ddd;
         }
 
+        table .ttd th,
+        .ttd td {
+            text-align: left;
+            padding: 6px;
+            /* Reduced padding for tighter spacing */
+            border: 0px none;
+        }
+
         table th {
             background-color: #34495e;
             color: white;
@@ -167,6 +175,31 @@
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
+            </table>
+            <br>
+            <table style="border: none;" class="ttd">
+                <tr>
+                    <td style="width: 70%;"></td>
+                    <td>
+                        <center>
+                            Maumere, <?= date('d-m-Y') ?>
+                            <br>
+                            Sekretaris BKD Maumere
+                        </center>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="height: 25px;"></td>
+                </tr>
+                <tr>
+                    <td style="width: 70%;"></td>
+                    <td>
+                        <center>
+                            <b>ALWAN MAHMUD, SE</b> <br>
+                            NIP 19700421 199904 1001
+                        </center>
+                    </td>
+                </tr>
             </table>
         </section>
     </div>
