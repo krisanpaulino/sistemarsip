@@ -40,8 +40,10 @@ class Arsip extends BaseController
     function save()
     {
         $data = $this->request->getPost();
-        if (session('user')->user_tipe == 'operator')
+        if (session('user')->user_tipe == 'operator') {
             $data['unit_id'] = user()->unit_id;
+            $data['operator_id'] = user()->operator_id;
+        }
         $model = new ArsipModel();
         //Insert Data untuk dapat ID
         if ($data['id'] == null) {

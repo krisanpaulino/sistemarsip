@@ -29,6 +29,7 @@
                                     <th>Jenis Arsip</th>
                                     <?php if (user()->user_tipe == 'admin') ?>
                                     <th>Unit</th>
+                                    <th>Uploaded by</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -43,6 +44,7 @@
                                         <td><?= $row->jenis_nama ?></td>
                                         <?php if (user()->user_tipe == 'admin') ?>
                                         <td><?= $row->unit_nama ?></td>
+                                        <td><?= $row->operator_nama ?></td>
 
                                         <td>
                                             <form action="<?= base_url(user()->user_tipe . '/arsip/download') ?>" method="post">

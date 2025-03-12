@@ -22,6 +22,7 @@ class ArsipModel extends Model
         'deleted',
         'arsip_file',
         'arsip_perihal',
+        'operator_id'
     ];
 
     // Dates
@@ -58,6 +59,7 @@ class ArsipModel extends Model
     {
         $this->join('jenis', 'jenis.jenis_id = arsip.jenis_id');
         $this->join('unit', 'unit.unit_id = arsip.unit_id');
+        $this->join('operator', 'operator.operator_id = arsip.operator_id', 'left');
         if ($arsip_id != null) {
             $this->where('arsip_id', $arsip_id);
             return $this->first();
@@ -70,6 +72,7 @@ class ArsipModel extends Model
     {
         $this->join('jenis', 'jenis.jenis_id = arsip.jenis_id');
         $this->join('unit', 'unit.unit_id = arsip.unit_id');
+        $this->join('operator', 'operator.operator_id = arsip.operator_id', 'left');
         $this->where('arsip.unit_id', $unit_id);
         $this->where('arsip.deleted', '0');
         return $this->find();
